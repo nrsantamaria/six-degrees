@@ -8,6 +8,7 @@ require('pg')
 
 get("/") do
   @stores = Store.all()
+  @brands = Brand.all()
   erb(:index)
 end
 
@@ -24,10 +25,6 @@ post("/brands") do
   redirect("/")
 end
 
-get("/brands") do
-  @brands = Brand.all()
-  erb(:brands)
-end
 
 get("/stores/:id") do
   @store = Store.find(params.fetch("id").to_i)

@@ -1,7 +1,7 @@
 <h1>Shoe Store & Brand Database</h1>
 
 <h2>Current shoe stores included in database:</h2>
-<h5>Click on a store name to access their inventory:</h5>
+<h4>Click on a store name to access their inventory:</h4>
 <% if @stores.any? %>
   <% @stores.each do |store| %>
     <ul>
@@ -11,7 +11,7 @@
 <% else %>
   <p>There are no stores in the database yet.</p>
 <%end%>
-
+<h4>Add shoe store to the database:</h4>
 <form action="/stores" method="post">
   <label for="new_store">Add a Store Name:</label>
   <input type="text" name="new_store">
@@ -19,7 +19,19 @@
   <button type="submit">Add Store</button>
 </form>
 
-<h2>Add shoe brands to the database:</h2>
+<h2>Current shoe brands included in database:</h2>
+<h4>Click on a brand name to access their information:</h4>
+<% if @brands.any? %>
+  <% @brands.each do |brand| %>
+    <ul>
+      <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a></li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>There are no brands in the database yet.</p>
+<%end%>
+
+<h4>Add shoe brands to the database:</h4>
 
 <form action="/brands" method="post">
   <label for="new_brand">Add a Brand Name:</label>
