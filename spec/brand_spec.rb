@@ -26,4 +26,9 @@ describe(Brand) do
     brand2 = Brand.new({:name => "nike", :price => "50.00"})
     expect(brand2.save).to(eq(false))
   end
+  it("will ensure that the price is returned as currency") do
+    brand1 = Brand.new({:name => "nike", :price => "50"})
+    brand1.save
+    expect(brand1.price).to(eq("$50.00"))
+  end
 end
