@@ -46,6 +46,21 @@ describe('the add brand to store path', {:type => :feature}) do
   end
 end
 
+describe('the delete brand from store path', {:type => :feature}) do
+  it('will remove a brand from a store') do
+    visit('/')
+    fill_in('new_store', :with => 'nordstrom')
+    click_button('Add Store')
+    fill_in('new_brand', :with => 'nike')
+    fill_in('new_brand_price', :with => '20')
+    click_button('Add Brand')
+    click_link('Nordstrom')
+    click_button('Add Brand')
+    click_button('x')
+    expect(page).to have_content('There are no brands in the inventory yet.')
+  end
+end
+
 describe('edit store path', {:type => :feature}) do
   it('update a store name') do
     visit('/')

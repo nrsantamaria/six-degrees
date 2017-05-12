@@ -6,7 +6,7 @@
   <% @store.brands.each do |brand| %>
     <ul>
       <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a> | price: <%= brand.price %>
-      <form action="/stores/<%= @store.id%>/delete_brand" method="post">
+      <form action="/stores/<%= @store.id%>/brands/<%= brand.id %>/delete_brand" method="post">
         <input type="hidden" name="_method" value="delete">
 
         <button type="submit" class="btn btn-xs">x</button>
@@ -17,18 +17,16 @@
   <p>There are no brands in the inventory yet.</p>
 <%end%>
 <% if @brands.any? %>
-  <% @brands.each do |brand| %>
-    <h5>Add brands to this store:</h5>
-    <form action="/stores/<%= @store.id %>/brands" method="post">
-      <label for="brand_id"></label>
-      <select id='brand_id' name='brand_id' type='text'>
-        <% @brands.each() do |brand| %>
-          <option value="<%= brand.id()%>"> <%= brand.name %> </option>
-        <% end %>
-      </select>
-      <button type="submit">Add Brand</button>
-    </form>
-  <% end %>
+  <h5>Add brands to this store:</h5>
+  <form action="/stores/<%= @store.id %>/brands" method="post">
+    <label for="brand_id"></label>
+    <select id='brand_id' name='brand_id' type='text'>
+      <% @brands.each() do |brand| %>
+        <option value="<%= brand.id()%>"> <%= brand.name %> </option>
+      <% end %>
+    </select>
+    <button type="submit">Add Brand</button>
+  </form>
 <% else %>
   <p>There are no brands in this database yet. <a href="/">Click here to add brands to the database.</a></p>
 <% end %>
