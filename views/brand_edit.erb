@@ -5,11 +5,11 @@
   <label for="new_brand_name">Change Brand Name:</label>
   <input type="text" name="new_brand_name">
 
-  <button type="submit">Update Brand</button>
+  <button class="btn btn-info" type="submit">Update Brand</button>
 </form>
 
 <form action="/brand_delete/<%= @brand.id%>" method="post">
   <input type="hidden" name="_method" value="delete">
 
-  <button type="submit">Delete Brand</button>
+  <button class="btn btn-info" type="submit">Delete Brand</button>
 </form>

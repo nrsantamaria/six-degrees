@@ -25,7 +25,7 @@
         <option value="<%= brand.id()%>"> <%= brand.name %> </option>
       <% end %>
     </select>
-    <button type="submit">Add Brand</button>
+    <button class="btn btn-info" type="submit">Add Brand</button>
   </form>
 <% else %>
   <p>There are no brands in this database yet. <a href="/">Click here to add brands to the database.</a></p>
@@ -35,5 +35,7 @@
 
 <footer>
   <hr>
-  <p class ="center"><a href="/">Return home</a></p>
+  <div class ="center">
+    <p><a href="/">Return home</a></p>
+  </div>
 </footer>
