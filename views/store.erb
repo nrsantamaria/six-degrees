@@ -5,7 +5,12 @@
 <h5>Click on brand names to learn more:</h5>
   <% @store.brands.each do |brand| %>
     <ul>
-      <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a> | price: <%= brand.price %></li>
+      <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a> | price: <%= brand.price %>
+      <form action="/stores/<%= @store.id%>/delete_brand" method="post">
+        <input type="hidden" name="_method" value="delete">
+
+        <button type="submit" class="btn btn-xs">x</button>
+      </form></li>
     </ul>
   <% end %>
 <% else %>

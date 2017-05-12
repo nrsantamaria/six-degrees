@@ -47,6 +47,13 @@ post("/stores/:id/brands") do
   redirect("/stores/#{@store.id}")
 end
 
+delete("/stores/:id/delete_brand") do
+  @store = Store.find(params.fetch("id").to_i)
+  @brand = Brand.find(params.fetch("id").to_i)
+  @store.brands.destroy(@brand)
+  redirect("/stores/#{@store.id}")
+end
+
 get("/brands/:id") do
   @brand = Brand.find(params.fetch("id").to_i)
   erb(:brand)
