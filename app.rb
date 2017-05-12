@@ -14,8 +14,12 @@ end
 
 post("/stores") do
   name = params.fetch("new_store")
-  store = Store.create({:name => name})
-  redirect("/")
+  @store = Store.new({:name => name})
+  if @store.save()
+    redirect("/")
+  else
+    erb(:errors)
+  end
 end
 
 post("/brands") do
