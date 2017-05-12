@@ -11,4 +11,8 @@ describe(Store) do
     store1.save
     expect(store1.name).to(eq("Macys"))
   end
+  it("will ensure that a name is entered") do
+    store1 = Store.create({:name => "Macy's"})
+    expect(store1.save).to(eq(true))
+  end
 end
