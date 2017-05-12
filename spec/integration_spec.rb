@@ -45,3 +45,16 @@ describe('the add brand to store path', {:type => :feature}) do
     expect(page).to have_content('Click on brand names to learn more:')
   end
 end
+
+describe('edit store path', {:type => :feature}) do
+  it('update a store name') do
+    visit('/')
+    fill_in('new_store', :with => 'nordstrom')
+    click_button('Add Store')
+    click_link('Nordstrom')
+    click_link('Click here to edit this store.')
+    fill_in('new_store_name', :with => 'nordstrom rack')
+    click_button('Update Store')
+    expect(page).to have_content('Nordstrom rack')
+  end
+end
