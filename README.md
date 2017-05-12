@@ -12,6 +12,17 @@ _This app will use a ActiveRecord to track shoe stores and shoe brands through a
 
 | Behavior |  Input   |  Output  |
 |----------|:--------:|:--------:|
+|goes to homepage| user visits homepage | all stores and brands listed on page|
+|clicks on individual store | user goes to the store page | user sees the details of the store inventory |
+|clicks on modify/delete store from store edit page | user goes to store modification page | user has options to delete or modify name of store|
+|user is on the store modification page | user types in different store name | user taken back to store page with updated store name|
+|user is on the store modification page | user clicks button to delete the store | store is deleted|
+|user clicks on the individual brand link | user taken to brand page | user can see ability to delete or modify brand|
+|clicks on modify/delete brand from brand page | user goes to brand modification page | user sees options to delete or modify name of brand|
+|user is on the brand modification page | user types in different brand name | user taken back to brand page with updated brand name|
+|user is on the brand modification page | user clicks button to delete the brand | brand is deleted|
+|user is on homepage and wants to add brand to a store|clicks on store, selects brand from dropdown|brand is added to a specific store|
+|user is on individual store page and wants to remove already added brands|user clicks x button next to brand name|brand is removed from brand list on store page|
 
 ## Setup/Installation Requirements
 
