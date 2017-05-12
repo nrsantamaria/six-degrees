@@ -7,4 +7,9 @@ describe(Brand) do
     store2 = Store.create({:name => "Nordstrom", :brand_ids => [brand1.id()]})
     expect(brand1.stores()).to(eq([store1, store2]))
   end
+  it("will upcase the first letter of the name") do
+    brand1 = Brand.new({:name => "nike", :price => "50.00"})
+    brand1.save
+    expect(brand1.name).to(eq("Nike"))
+  end
 end
