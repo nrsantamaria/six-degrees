@@ -1,0 +1,19 @@
+<h1>Shoe Store Database</h1>
+
+<h2>Current shoe stores included in database:</h2>
+<% if @stores.any? %>
+  <% @stores.each do |store| %>
+    <ul>
+      <li><%= store.name %></li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>There are no stores in the database yet.</p>
+<%end%>
+
+<form action="/stores" method="post">
+  <label for="new_store">Add a Store Name Below:</label>
+  <input type="text" name="new_store">
+
+  <button type="submit">Add Store</button>
+</form>
