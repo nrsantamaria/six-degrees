@@ -21,8 +21,12 @@ end
 post("/brands") do
   name = params.fetch("new_brand")
   price = params.fetch("new_brand_price")
-  brand = Brand.create({:name => name, :price => price})
-  redirect("/")
+  @brand = Brand.new({:name => name, :price => price})
+  if @brand.save()
+    redirect("/")
+  else
+    erb(:errors)
+  end
 end
 
 

@@ -12,4 +12,8 @@ describe(Brand) do
     brand1.save
     expect(brand1.name).to(eq("Nike"))
   end
+  it("will ensure that a name is entered") do
+    brand1 = Brand.new({:name => "", :price => "50.00"})
+    expect(brand1.save).to(eq(false))
+  end
 end
