@@ -1,4 +1,4 @@
-<h1>Shoe Store Database</h1>
+<h1>Shoe Store & Brand Database</h1>
 
 <h2>Current shoe stores included in database:</h2>
 <h5>Click on a store name to access their inventory:</h5>
@@ -17,4 +17,16 @@
   <input type="text" name="new_store">
 
   <button type="submit">Add Store</button>
+</form>
+
+<h2>Add shoe brands to the database:</h2>
+
+<form action="/brands" method="post">
+  <label for="new_brand">Add a Brand Name:</label>
+  <input type="text" name="new_brand">
+
+  <label for="new_brand_price">Add a Brand Price:</label>
+  <input type="text" name="new_brand_price">
+
+  <button type="submit">Add Brand</button>
 </form>

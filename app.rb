@@ -17,17 +17,30 @@ post("/stores") do
   redirect("/")
 end
 
+post("/brands") do
+  name = params.fetch("new_brand")
+  price = params.fetch("new_brand_price")
+  brand = Brand.create({:name => name, :price => price})
+  redirect("/")
+end
+
+get("/brands") do
+  @brands = Brand.all()
+  erb(:brands)
+end
+
 get("/stores/:id") do
   @store = Store.find(params.fetch("id").to_i)
+  @brands = Brand.all()
   erb(:store)
 end
 
 post("/stores/:id/brands") do
-  store_id = params.fetch("id").to_i
-  name = params.fetch("new_brand")
-  price = params.fetch("new_brand_price")
-  brand = Brand.create({:name => name, :price => price, :store_ids => [store_id]})
-  redirect("/stores/#{store_id}")
+  @store = Store.find(params.fetch("id").to_i)
+  brand_id = params.fetch("brand_id").to_i
+  @brand = Brand.find(brand_id)
+  @brand.stores.push(@store)
+  redirect("/stores/#{@store.id}")
 end
 
 get("/brands/:id") do

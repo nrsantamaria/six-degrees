@@ -12,14 +12,20 @@
   <p>There are no brands in the inventory yet.</p>
 <%end%>
 
+<h5>Add brands to this store:</h5>
 <form action="/stores/<%= @store.id %>/brands" method="post">
-  <label for="new_brand">Add a Brand Name:</label>
-  <input type="text" name="new_brand">
-
-  <label for="new_brand_price">Add a Brand Price:</label>
-  <input type="text" name="new_brand_price">
-
+  <label for="brand_id"></label>
+  <select id='brand_id' name='brand_id' type='text'>
+    <% @brands.each() do |brand| %>
+      <option value="<%= brand.id()%>"> <%= brand.name %> </option>
+    <% end %>
+  </select>
   <button type="submit">Add Brand</button>
 </form>
 
 <a href="/store_edit/<%= @store.id %>">Click here to edit this store.</a>
+
+<footer>
+  <hr>
+  <p><a href="/">Return home.</a></p>
+</footer>
