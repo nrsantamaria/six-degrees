@@ -20,4 +20,10 @@ describe(Brand) do
     brand1 = Brand.new({:name => "qweruyqwoieruyoqwieuyrqwoieuryqowieuyrqowieuryqoweiuryqowieuryqowieuryqowieuryq23iuyroqwieryqoiwueryqwoeiury", :price => "50.00"})
     expect(brand1.save).to(eq(false))
   end
+  it("will ensure a new brand name is unique") do
+    brand1 = Brand.new({:name => "nike", :price => "50.00"})
+    brand1.save
+    brand2 = Brand.new({:name => "nike", :price => "50.00"})
+    expect(brand2.save).to(eq(false))
+  end
 end
