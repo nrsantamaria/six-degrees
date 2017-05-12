@@ -29,3 +29,28 @@ post("/stores/:id/brands") do
   brand = Brand.create({:name => name, :price => price, :store_ids => [store_id]})
   redirect("/stores/#{store_id}")
 end
+
+get("/brands/:id") do
+  @brand = Brand.find(params.fetch("id").to_i)
+  erb(:brand)
+end
+
+get("/store_edit/:id") do
+  @store = Store.find_by(id: params.fetch("id").to_i)
+  erb(:store_edit)
+end
+
+patch("/store_edit/:id") do
+  store_id = params.fetch("id").to_i
+  name = params.fetch("new_store_name")
+  @store = Store.find(params.fetch("id").to_i)
+  @store.update({:name => name})
+  redirect("/stores/#{store_id}")
+end
+
+delete("/store_delete/:id") do
+  store_id = params.fetch("id").to_i
+  @store = Store.find(params.fetch("id").to_i)
+  @store.delete
+  redirect("/")
+end

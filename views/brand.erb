@@ -1,0 +1,14 @@
+<h1>Brand Name: <%= @brand.name %></h1>
+<h4>Brand Price: <%= @brand.price %></h4>
+
+<h2>Current stores that have this brand in  their inventory:</h2>
+<h5>Click on a store name to access their information:</h5>
+<% if @brand.stores.any? %>
+  <% @brand.stores.each do |store| %>
+    <ul>
+      <li><a href="/stores/<%= store.id%>"><%= store.name %></a></li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>There are no stores that have this brand in their inventory yet.</p>
+<%end%>

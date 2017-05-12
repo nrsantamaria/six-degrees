@@ -1,11 +1,11 @@
 <h1>Store Name: <%= @store.name %></h1>
 
 <h2>Current brands included in store inventory:</h2>
-<h5>Click on a store name to access their list of store locations:</h5>
+<h5>Click on brand names to learn more:</h5>
 <% if @store.brands.any? %>
   <% @store.brands.each do |brand| %>
     <ul>
-      <li><a href="/stores/<%= @store.id %>/brands/<%= brand.id %>"><%= brand.name %></a> | price: <%= brand.price %></li>
+      <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a> | price: <%= brand.price %></li>
     </ul>
   <% end %>
 <% else %>
@@ -21,3 +21,5 @@
 
   <button type="submit">Add Brand</button>
 </form>
+
+<a href="/store_edit/<%= @store.id %>">Click here to edit this store.</a>
