@@ -58,3 +58,15 @@ describe('edit store path', {:type => :feature}) do
     expect(page).to have_content('Nordstrom rack')
   end
 end
+
+describe('delete store path', {:type => :feature}) do
+  it('delete a store') do
+    visit('/')
+    fill_in('new_store', :with => 'nordstrom')
+    click_button('Add Store')
+    click_link('Nordstrom')
+    click_link('Click here to edit this store.')
+    click_button('Delete Store')
+    expect(page).to have_content('There are no stores in the database yet.')
+  end
+end
