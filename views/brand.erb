@@ -1,7 +1,7 @@
 <h1>Brand Name: <%= @brand.name %></h1>
 <h4>Brand Price: <%= @brand.price %></h4>
 
-<h2>Current stores that have this brand in  their inventory:</h2>
+<h3>Current stores that have this brand in  their inventory:</h3>
 <h5>Click on a store name to access their information:</h5>
 <% if @brand.stores.any? %>
   <% @brand.stores.each do |store| %>
@@ -13,7 +13,9 @@
   <p>There are no stores that have this brand in their inventory yet.</p>
 <%end%>
 
-<footer class="center">
+<a href="/brand_edit/<%= @brand.id %>">Click here to edit this brand.</a>
+
+<footer>
   <hr>
-  <p><a href="/">Return home</a></p>
+  <p class ="center"><a href="/">Return home</a></p>
 </footer>
