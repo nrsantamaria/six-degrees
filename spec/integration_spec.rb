@@ -21,3 +21,12 @@ describe('the store path', {:type => :feature}) do
     expect(page).to have_content('There are no brands in the inventory yet.')
   end
 end
+
+describe('the add brand path', {:type => :feature}) do
+  it('has a field that will allow users to create a new brand to add to the brand list') do
+    visit('/')
+    fill_in('new_brand', :with => 'nike')
+    click_button('Add Brand')
+    expect(page).to have_content('Nike')
+  end
+end
