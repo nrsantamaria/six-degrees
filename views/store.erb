@@ -1,0 +1,23 @@
+<h1>Store Name: <%= @store.name %></h1>
+
+<h2>Current brands included in store inventory:</h2>
+<h5>Click on a store name to access their list of store locations:</h5>
+<% if @store.brands.any? %>
+  <% @store.brands.each do |brand| %>
+    <ul>
+      <li><a href="/stores/<%= @store.id %>/brands/<%= brand.id %>"><%= brand.name %></a> | price: <%= brand.price %></li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>There are no brands in the inventory yet.</p>
+<%end%>
+
+<form action="/stores/<%= @store.id %>/brands" method="post">
+  <label for="new_brand">Add a Brand Name:</label>
+  <input type="text" name="new_brand">
+
+  <label for="new_brand_price">Add a Brand Price:</label>
+  <input type="text" name="new_brand_price">
+
+  <button type="submit">Add Brand</button>
+</form>

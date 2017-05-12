@@ -1,10 +1,11 @@
 <h1>Shoe Store Database</h1>
 
 <h2>Current shoe stores included in database:</h2>
+<h5>Click on a store name to access their inventory:</h5>
 <% if @stores.any? %>
   <% @stores.each do |store| %>
     <ul>
-      <li><%= store.name %></li>
+      <li><a href="/stores/<%= store.id %>"><%= store.name %></a></li>
     </ul>
   <% end %>
 <% else %>
@@ -12,7 +13,7 @@
 <%end%>
 
 <form action="/stores" method="post">
-  <label for="new_store">Add a Store Name Below:</label>
+  <label for="new_store">Add a Store Name:</label>
   <input type="text" name="new_store">
 
   <button type="submit">Add Store</button>
