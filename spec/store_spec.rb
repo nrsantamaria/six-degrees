@@ -19,4 +19,10 @@ describe(Store) do
     store1 = Store.new({:name => "qweruyqwoieruyoqwieuyrqwoieuryqowieuyrqowieuryqoweiuryqowieuryqowieuryqowieuryq23iuyroqwieryqoiwueryqwoeiury"})
     expect(store1.save).to(eq(false))
   end
+  it("will ensure a new brand name is unique") do
+    store1 = Brand.new({:name => "macys"})
+    store1.save
+    store2 = Brand.new({:name => "macys"})
+    expect(store2.save).to(eq(false))
+  end
 end
