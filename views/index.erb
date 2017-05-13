@@ -1,45 +1,47 @@
-<h1>Shoe Store & Brand Database</h1>
+<div class="jumbotron">
+  <h1>Shoe Store & Brand Database</h1>
+</div>
+<div class="container">
+  <h2>Current shoe stores included in database:</h2>
+  <h4>Click on a store name to access their inventory:</h4>
+  <% if @stores.any? %>
+    <% @stores.each do |store| %>
+      <ul>
+        <li><a href="/stores/<%= store.id %>"><%= store.name %></a></li>
+      </ul>
+    <% end %>
+  <% else %>
+    <p>There are no stores in the database yet.</p>
+  <%end%>
 
-<h2>Current shoe stores included in database:</h2>
-<h4>Click on a store name to access their inventory:</h4>
-<% if @stores.any? %>
-  <% @stores.each do |store| %>
-    <ul>
-      <li><a href="/stores/<%= store.id %>"><%= store.name %></a></li>
-    </ul>
-  <% end %>
-<% else %>
-  <p>There are no stores in the database yet.</p>
-<%end%>
+  <h4>Add shoe store to the database:</h4>
+  <form action="/stores" method="post">
+    <label for="new_store">Add a Store Name:</label>
+    <input type="text" name="new_store">
 
-<h4>Add shoe store to the database:</h4>
-<form action="/stores" method="post">
-  <label for="new_store">Add a Store Name:</label>
-  <input type="text" name="new_store">
+    <button class="btn btn-info" type="submit">Add Store</button>
+  </form>
 
-  <button class="btn btn-info" type="submit">Add Store</button>
-</form>
+  <h2>Current shoe brands included in database:</h2>
+  <h4>Click on a brand name to access their information:</h4>
+  <% if @brands.any? %>
+    <% @brands.each do |brand| %>
+        <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a></li>
+      </ul>
+    <% end %>
+  <% else %>
+    <p>There are no brands in the database yet.</p>
+  <%end%>
 
-<h2>Current shoe brands included in database:</h2>
-<h4>Click on a brand name to access their information:</h4>
-<% if @brands.any? %>
-  <% @brands.each do |brand| %>
-    <ul>
-      <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a></li>
-    </ul>
-  <% end %>
-<% else %>
-  <p>There are no brands in the database yet.</p>
-<%end%>
+  <h4>Add shoe brands to the database:</h4>
 
-<h4>Add shoe brands to the database:</h4>
+  <form action="/brands" method="post">
+    <label for="new_brand">Add a Brand Name:</label>
+    <input type="text" name="new_brand">
 
-<form action="/brands" method="post">
-  <label for="new_brand">Add a Brand Name:</label>
-  <input type="text" name="new_brand">
+    <label for="new_brand_price">Add a Brand Price:</label>
+    <input type="number" name="new_brand_price">
 
-  <label for="new_brand_price">Add a Brand Price:</label>
-  <input type="number" name="new_brand_price">
-
-  <button class="btn btn-info" type="submit">Add Brand</button>
-</form>
+    <button class="btn btn-info" type="submit">Add Brand</button>
+  </form>
+</div>

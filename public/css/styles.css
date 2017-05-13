@@ -1,3 +1,37 @@
+.jumbotron h1 {
+  font-family: 'BioRhyme', serif;
+  text-align: center;
+  color: white;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.jumbotron {
+  background-color: #72D9C6;
+}
+
+.jumbotron h4 {
+  text-align: center;
+}
+
+.btn-default {
+  width:100px;
+  margin: -20px -50px;
+  position:relative;
+  top:50%;
+  left:50%;
+}
 .center {
   text-align: center;
+}
+
+.footer {
+  background-image: url('/img/footer.jpg');
+  height: 150px;
+}
+
+.btn-danger {
+  background-color: #ed3135;
 }

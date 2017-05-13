@@ -1,23 +1,30 @@
-<h1>Brand Name: <%= @brand.name %></h1>
-<h4>Brand Price: <%= @brand.price %></h4>
+<div class="jumbotron">
+  <h1>Brand Name: <%= @brand.name %></h1>
+  <h4>Brand Price: <%= @brand.price %></h4>
+  <br>
+  <a class="btn btn-default" href="/brand_edit/<%= @brand.id %>">Edit Brand</a>
+</div>
+<div class="container">
 
-<h3>Current stores that have this brand in  their inventory:</h3>
-<h5>Click on a store name to access their information:</h5>
-<% if @brand.stores.any? %>
-  <% @brand.stores.each do |store| %>
-    <ul>
-      <li><a href="/stores/<%= store.id%>"><%= store.name %></a></li>
-    </ul>
-  <% end %>
-<% else %>
-  <p>There are no stores that have this brand in their inventory yet.</p>
-<%end%>
 
-<a href="/brand_edit/<%= @brand.id %>">Click here to edit this brand.</a>
-
-<footer>
-  <hr>
-  <div class ="center">
-    <p><a href="/">Return home</a></p>
+  <h3>Current stores that have this brand in  their inventory:</h3>
+  <% if @brand.stores.any? %>
+  <div class="well">
+  <p><em>Click on a store name to access their information:</em></p>
+    <% @brand.stores.each do |store| %>
+      <ul>
+        <li><a href="/stores/<%= store.id%>"><%= store.name %></a></li>
+      </ul>
+    <% end %>
+  <% else %>
+    <p>There are no stores that have this brand in their inventory yet.</p>
+  <%end%>
   </div>
-</footer>
+
+  <footer>
+    <hr>
+    <div class ="center">
+      <p><a href="/">Return home</a></p>
+    </div>
+  </footer>
+</div>

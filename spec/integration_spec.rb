@@ -42,7 +42,7 @@ describe('the add brand to store path', {:type => :feature}) do
     click_button('Add Brand')
     click_link('Nordstrom')
     click_button('Add Brand')
-    expect(page).to have_content('Click on brand names to learn more:')
+    expect(page).to have_content('Nordstrom')
   end
 end
 
@@ -67,7 +67,7 @@ describe('edit store path', {:type => :feature}) do
     fill_in('new_store', :with => 'nordstrom')
     click_button('Add Store')
     click_link('Nordstrom')
-    click_link('Click here to edit this store.')
+    click_link('Edit Store')
     fill_in('new_store_name', :with => 'nordstrom rack')
     click_button('Update Store')
     expect(page).to have_content('Nordstrom rack')
@@ -80,7 +80,7 @@ describe('delete store path', {:type => :feature}) do
     fill_in('new_store', :with => 'nordstrom')
     click_button('Add Store')
     click_link('Nordstrom')
-    click_link('Click here to edit this store.')
+    click_link('Edit Store')
     click_button('Delete Store')
     expect(page).to have_content('There are no stores in the database yet.')
   end
@@ -92,7 +92,7 @@ describe('edit brand path', {:type => :feature}) do
     fill_in('new_brand', :with => 'nike')
     click_button('Add Brand')
     click_link('Nike')
-    click_link('Click here to edit this brand.')
+    click_link('Edit Brand')
     fill_in('new_brand_name', :with => 'nike pro')
     click_button('Update Brand')
     expect(page).to have_content('Nike pro')
@@ -105,7 +105,7 @@ describe('delete brand path', {:type => :feature}) do
     fill_in('new_brand', :with => 'nike')
     click_button('Add Brand')
     click_link('Nike')
-    click_link('Click here to edit this brand.')
+    click_link('Edit Brand')
     click_button('Delete Brand')
     expect(page).to have_content('There are no brands in the database yet.')
   end

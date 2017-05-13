@@ -1,15 +1,29 @@
-<h1>Store Name: <%= @store.name %></h1>
+<div class="jumbotron">
+  <h1>Store Name: <%= @store.name %></h1>
+</div>
+<div class="container">
+  <h3>Change Store Name:</h3>
+  <form action="/store_edit/<%= @store.id%>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <div class="form-group">
+      <input class="form-control" type="text" name="new_store_name">
+    </div>
 
-<form action="/store_edit/<%= @store.id%>" method="post">
-  <input type="hidden" name="_method" value="patch">
-  <label for="new_store_name">Change Store Name:</label>
-  <input type="text" name="new_store_name">
+    <button class="btn btn-info" type="submit">Update Store</button>
+  </form>
 
-  <button type="submit">Update Store</button>
-</form>
+  <h3>Remove Store from Database:</h3>
+  <form action="/store_delete/<%= @store.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
 
-<form action="/store_delete/<%= @store.id%>" method="post">
-  <input type="hidden" name="_method" value="delete">
+    <button class="btn btn-danger" type="submit">Delete Store</button>
+  </form>
+  <br>
 
-  <button type="submit">Delete Store</button>
-</form>
+  <footer>
+    <hr>
+    <div class ="center">
+      <p><a href="/stores/<%= @store.id %>">Back</a> | <a href="/">Home</a></p>
+    </div>
+  </footer>
+</div>
