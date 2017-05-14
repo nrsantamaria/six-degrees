@@ -1,0 +1,29 @@
+<div class="jumbotron">
+  <h1>Actor First Name: <%= @actor.first_name %></h1>
+  <h4>Actor Last Name: <%= @actor.last_name %></h4>
+</div>
+<div class="container">
+  <h3>Change Actor Name:</h3>
+  <form action="/actor_edit/<%= @actor.id%>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <div class="form-group">
+      <input class="form-control" type="text" name="new_actor_first">
+      <input class="form-control" type="text" name="new_actor_last">
+    </div>
+    <button class="btn btn-info" type="submit">Update Actor</button>
+  </form>
+
+  <h3>Remove Actor from Database:</h3>
+  <form action="/actor_delete/<%= @actor.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+
+    <button class="btn btn-danger" type="submit">Delete Actor</button>
+  </form>
+  <br>
+  <footer>
+    <hr>
+    <div class ="center">
+      <p><a href="/actors/<%= @actor.id %>">Back</a> | <a href="/">Home</a></p>
+    </div>
+  </footer>
+</div>

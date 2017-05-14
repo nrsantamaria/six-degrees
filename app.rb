@@ -1,102 +1,95 @@
 require('sinatra')
 require('sinatra/reloader')
 require('sinatra/activerecord')
-require('./lib/brand')
-require('./lib/store')
+require('./lib/actor')
+require('./lib/movie')
 also_reload('lib/**/*.rb')
 require('pg')
 
 get("/") do
-  @stores = Store.all()
-  @brands = Brand.all()
+  @movies = Movie.all()
+  @actors = Actor.all()
   erb(:index)
 end
 
-post("/stores") do
-  name = params.fetch("new_store")
-  @store = Store.new({:name => name})
-  if @store.save()
-    redirect("/")
-  else
-    erb(:errors)
-  end
-end
-
-post("/brands") do
-  name = params.fetch("new_brand")
-  price = params.fetch("new_brand_price")
-  @brand = Brand.new({:name => name, :price => price})
-  if @brand.save()
-    redirect("/")
-  else
-    erb(:errors)
-  end
-end
-
-get("/stores/:id") do
-  @store = Store.find(params.fetch("id").to_i)
-  @brands = Brand.all()
-  erb(:store)
-end
-
-post("/stores/:id/brands") do
-  @store = Store.find(params.fetch("id").to_i)
-  brand_id = params.fetch("brand_id").to_i
-  @brand = Brand.find(brand_id)
-  @brand.stores.push(@store)
-  redirect("/stores/#{@store.id}")
-end
-
-delete("/stores/:store_id/brands/:brand_id/delete_brand") do
-  store_id = params.fetch("store_id").to_i
-  brand_id = params.fetch("brand_id").to_i
-  @store = Store.find(store_id)
-  @brand = Brand.find(brand_id)
-  @store.brands.destroy(@brand)
-  redirect("/stores/#{@store.id}")
-end
-
-get("/brands/:id") do
-  @brand = Brand.find(params.fetch("id").to_i)
-  erb(:brand)
-end
-
-get("/store_edit/:id") do
-  @store = Store.find_by(id: params.fetch("id").to_i)
-  erb(:store_edit)
-end
-
-patch("/store_edit/:id") do
-  store_id = params.fetch("id").to_i
-  name = params.fetch("new_store_name")
-  @store = Store.find(params.fetch("id").to_i)
-  @store.update({:name => name})
-  redirect("/stores/#{store_id}")
-end
-
-delete("/store_delete/:id") do
-  store_id = params.fetch("id").to_i
-  @store = Store.find(params.fetch("id").to_i)
-  @store.delete
+post("/movies") do
+  title = params.fetch("new_movie")
+  @movie = Movie.create({:title => title})
   redirect("/")
 end
 
-get("/brand_edit/:id") do
-  @brand = Brand.find_by(id: params.fetch("id").to_i)
-  erb(:brand_edit)
+post("/actors") do
+  first_name = params.fetch("actor_first")
+  last_name = params.fetch("actor_last")
+  @actor = Actor.create({:first_name => first_name, :last_name => last_name})
+  redirect("/")
 end
 
-patch("/brand_edit/:id") do
-  brand_id = params.fetch("id").to_i
-  name = params.fetch("new_brand_name")
-  @brand = Brand.find(params.fetch("id").to_i)
-  @brand.update({:name => name})
-  redirect("/brands/#{brand_id}")
+get("/movies/:id") do
+  @movie = Movie.find(params.fetch("id").to_i)
+  @actors = Actor.all()
+  erb(:movie)
 end
 
-delete("/brand_delete/:id") do
-  brand_id = params.fetch("id").to_i
-  @brand = Brand.find(params.fetch("id").to_i)
-  @brand.delete
+post("/movies/:id/actors") do
+  @movie = Movie.find(params.fetch("id").to_i)
+  actor_id = params.fetch("actor_id").to_i
+  @actor = Actor.find(actor_id)
+  @actor.movies.push(@movie)
+  redirect("/movies/#{@movie.id}")
+end
+
+delete("/movies/:movie_id/actors/:actor_id/delete_actor") do
+  movie_id = params.fetch("movie_id").to_i
+  actor_id = params.fetch("actor_id").to_i
+  @movie = Movie.find(movie_id)
+  @actor = Actor.find(actor_id)
+  @movie.actors.destroy(@actor)
+  redirect("/movies/#{@movie.id}")
+end
+
+get("/actors/:id") do
+  @actor = Actor.find(params.fetch("id").to_i)
+  erb(:actor)
+end
+
+get("/movie_edit/:id") do
+  @movie = Movie.find_by(id: params.fetch("id").to_i)
+  erb(:movie_edit)
+end
+
+patch("/movie_edit/:id") do
+  movie_id = params.fetch("id").to_i
+  title = params.fetch("new_movie_title")
+  @movie = Movie.find(params.fetch("id").to_i)
+  @movie.update({:title => title})
+  redirect("/movies/#{movie_id}")
+end
+
+delete("/movie_delete/:id") do
+  movie_id = params.fetch("id").to_i
+  @movie = Movie.find(params.fetch("id").to_i)
+  @movie.delete
+  redirect("/")
+end
+
+get("/actor_edit/:id") do
+  @actor = Actor.find_by(id: params.fetch("id").to_i)
+  erb(:actor_edit)
+end
+
+patch("/actor_edit/:id") do
+  actor_id = params.fetch("id").to_i
+  first_name = params.fetch("new_actor_first")
+  last_name = params.fetch("new_actor_last")
+  @actor = Actor.find(params.fetch("id").to_i)
+  @actor.update({:name => name})
+  redirect("/actors/#{actor_id}")
+end
+
+delete("/actor_delete/:id") do
+  actor_id = params.fetch("id").to_i
+  @actor = Actor.find(params.fetch("id").to_i)
+  @actor.delete
   redirect("/")
 end

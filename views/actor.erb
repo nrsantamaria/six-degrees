@@ -1,0 +1,30 @@
+<div class="jumbotron">
+  <h1>Actor First Name: <%= @actor.first_name %></h1>
+  <h4>Actor Last Name: <%= @actor.last_name %></h4>
+  <br>
+  <a class="btn btn-default" href="/actor_edit/<%= @actor.id %>">Edit Actor</a>
+</div>
+<div class="container">
+
+
+  <h3>Current movies that have this actor in their cast:</h3>
+  <% if @actor.movies.any? %>
+  <div class="well">
+  <p><em>Click on a movie name to access their information:</em></p>
+    <% @actor.movies.each do |movie| %>
+      <ul>
+        <li><a href="/movies/<%= movie.id%>"><%= movie.name %></a></li>
+      </ul>
+    <% end %>
+  <% else %>
+    <p>There are no movies that have this actor in their cast.</p>
+  <%end%>
+  </div>
+
+  <footer>
+    <hr>
+    <div class ="center">
+      <p><a href="/">Return home</a></p>
+    </div>
+  </footer>
+</div>

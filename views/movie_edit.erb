@@ -1,0 +1,29 @@
+<div class="jumbotron">
+  <h1>Movie Title: <%= @movie.title %></h1>
+</div>
+<div class="container">
+  <h3>Change Movie Title:</h3>
+  <form action="/movie_edit/<%= @movie.id%>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <div class="form-group">
+      <input class="form-control" type="text" name="new_movie_title">
+    </div>
+
+    <button class="btn btn-info" type="submit">Update Movie</button>
+  </form>
+
+  <h3>Remove Movie from Database:</h3>
+  <form action="/movie_delete/<%= @movie.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+
+    <button class="btn btn-danger" type="submit">Delete Movie</button>
+  </form>
+  <br>
+
+  <footer>
+    <hr>
+    <div class ="center">
+      <p><a href="/movies/<%= @movie.id %>">Back</a> | <a href="/">Home</a></p>
+    </div>
+  </footer>
+</div>

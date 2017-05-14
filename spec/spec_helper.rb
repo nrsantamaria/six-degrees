@@ -5,16 +5,16 @@ require("pg")
 require("pry")
 require("sinatra/activerecord")
 require("shoulda/matchers")
-require("brand")
-require("store")
+require("actor")
+require("movie")
 
 RSpec.configure do |config|
   config.after(:each) do
-    Store.all.each do |store|
-      store.destroy
+    Movie.all.each do |movie|
+      movie.destroy
     end
-    Brand.all.each do |shoe|
-      shoe.destroy
+    Actor.all.each do |actor|
+      actor.destroy
     end
   end
 end
