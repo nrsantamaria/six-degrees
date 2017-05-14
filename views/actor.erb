@@ -13,7 +13,7 @@
   <p><em>Click on a movie name to access their information:</em></p>
     <% @actor.movies.each do |movie| %>
       <ul>
-        <li><a href="/movies/<%= movie.id%>"><%= movie.name %></a></li>
+        <li><a href="/movies/<%= movie.id%>"><%= movie.title %></a></li>
       </ul>
     <% end %>
   <% else %>

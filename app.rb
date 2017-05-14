@@ -12,6 +12,13 @@ get("/") do
   erb(:index)
 end
 
+post("/degrees") do
+  @movies = Movie.all()
+  @actors = Actor.all()
+  actor.degrees
+  redirect("/")
+end
+
 post("/movies") do
   title = params.fetch("new_movie")
   @movie = Movie.create({:title => title})
