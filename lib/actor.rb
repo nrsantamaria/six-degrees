@@ -11,12 +11,19 @@ class Actor < ActiveRecord::Base
         if actors_array.any?
           movies_array.push(movie.title)
         end
-
         actor.movies.each do |movie|
           actors_array.push(actor.first_name)
           movie.actors.each do |actor|
-            if actor.id ==(actor_id)
-              return movies_array.push(movie.title) + actors_array.uniq
+            if actors_array.any?
+              movies_array.push(movie.title)
+            end
+            actor.movies.each do |movie|
+              actors_array.push(actor.first_name)
+              movie.actors.each do |actor|
+                if actor.id ==(actor_id)
+                  return movies_array.push(movie.title).uniq + actors_array.uniq
+                end
+              end
             end
           end
         end
