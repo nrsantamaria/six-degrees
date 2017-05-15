@@ -19,6 +19,22 @@
     <button class="btn btn-info" type="submit">See Degrees</button>
   </form>
 
+  <h2>The Movies they are both in:</h2>
+
+  <% if @actor.movies.any? %>
+  <div class="well">
+    <% @actor.movies.each do |movie| %>
+      <ul>
+        <li><%= movie.title %></a></li>
+      </ul>
+    <% end %>
+  <% else %>
+    <p>There are no movies that have this actor in their cast.</p>
+  <%end%>
+  </div>
+
+
+
   <h2>Current movies included in database:</h2>
   <h4>Click on a movie name to access their inventory:</h4>
   <% if @movies.any? %>
