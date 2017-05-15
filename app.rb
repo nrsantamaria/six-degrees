@@ -90,7 +90,7 @@ patch("/actor_edit/:id") do
   first_name = params.fetch("new_actor_first")
   last_name = params.fetch("new_actor_last")
   @actor = Actor.find(params.fetch("id").to_i)
-  @actor.update({:name => name})
+  @actor.update({:first_name => first_name, :last_name => last_name})
   redirect("/actors/#{actor_id}")
 end
 
