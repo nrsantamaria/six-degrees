@@ -10,28 +10,28 @@ class Actor < ActiveRecord::Base
     self.movies.each do |movie|
       movie.actors.each do |actor|
         next if actor.id == self.id
-        first_degree = [actor.first_name]
-        first_degree.unshift(movie.title)
+        first_degree = [" " + actor.name]
+        first_degree.unshift(" -> " + movie.title + " -> ")
         if actor.id ==(actor_id)
-          return results = ([self.first_name] + first_degree)
+          return ([self.name] + first_degree).join
         end
 
         actor.movies.each do |movie|
           movie.actors.each do |actor|
             next if actor.id == self.id
-            second_degree = [actor.first_name]
-            second_degree.unshift(movie.title)
+            second_degree = [" " + actor.name]
+            second_degree.unshift(" -> " + movie.title + " -> ")
             if actor.id ==(actor_id)
-              return results = ([self.first_name] + (first_degree + second_degree))
+              return ([self.name] + ([first_degree, second_degree].uniq)).join
             end
 
             actor.movies.each do |movie|
               movie.actors.each do |actor|
                 next if actor.id == self.id
-                third_degree = [actor.first_name]
-                third_degree.unshift(movie.title)
+                third_degree = [" " + actor.name]
+                third_degree.unshift(" -> " + movie.title + " -> ")
                 if actor.id ==(actor_id)
-                  return results = ([self.first_name] + (first_degree + second_degree + third_degree)).uniq
+                  return ([self.name] + ([first_degree, second_degree, third_degree].uniq)).join
                 end
               end
             end

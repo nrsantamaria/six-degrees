@@ -7,12 +7,12 @@
     <div class="form-group">
       <select id='id' name='id' type='text' class="form-control">
         <% @actors.each() do |actor| %>
-        <option value="<%= actor.id()%>"> <%= actor.first_name %> <%= actor.last_name %></option>
+        <option value="<%= actor.id()%>"> <%= actor.name %></option>
         <% end %>
       </select>
       <select id='actor_id' name='actor_id' type='text' class="form-control">
         <% @actors.each() do |actor| %>
-        <option value="<%= actor.id()%>"> <%= actor.first_name %> <%= actor.last_name %></option>
+        <option value="<%= actor.id()%>"> <%= actor.name %></option>
         <% end %>
       </select>
     </div>
@@ -43,7 +43,7 @@
   <h4>Click on a actor name to access their information:</h4>
   <% if @actors.any? %>
     <% @actors.each do |actor| %>
-        <li><a href="/actors/<%= actor.id %>"><%= actor.first_name %> <%= actor.last_name %> <%= actor.id %></a></li>
+        <li><a href="/actors/<%= actor.id %>"><%= actor.name %> <%= actor.id %></a></li>
       </ul>
     <% end %>
   <% else %>
@@ -53,11 +53,8 @@
   <h4>Add actors to the database:</h4>
 
   <form action="/actors" method="post">
-    <label for="new_actor_first">Add a Actor First Name:</label>
-    <input type="text" name="actor_first">
-
-    <label for="new_actor_last">Add a Actor Last Name:</label>
-    <input type="text" name="actor_last">
+    <label for="actor_name">Add a Actor First Name:</label>
+    <input type="text" name="actor_name">
 
     <button class="btn btn-info" type="submit">Add Actor</button>
   </form>

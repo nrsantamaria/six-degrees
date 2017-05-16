@@ -7,7 +7,7 @@ class CreateTables < ActiveRecord::Migration[5.1]
       t.timestamps
     end
     create_table(:actors) do |t|
-      t.column(:first_name, :text)
+      t.column(:name, :text)
       t.column(:last_name, :text)
       t.column(:imdb_link, :text)
 

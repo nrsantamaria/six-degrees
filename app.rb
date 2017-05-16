@@ -33,9 +33,8 @@ post("/movies") do
 end
 
 post("/actors") do
-  first_name = params.fetch("actor_first")
-  last_name = params.fetch("actor_last")
-  @actor = Actor.create({:first_name => first_name, :last_name => last_name})
+  name = params.fetch("actor_name")
+  @actor = Actor.create({:name => name})
   redirect("/")
 end
 
@@ -94,10 +93,9 @@ end
 
 patch("/actor_edit/:id") do
   actor_id = params.fetch("id").to_i
-  first_name = params.fetch("new_actor_first")
-  last_name = params.fetch("new_actor_last")
+  name = params.fetch("new_actor_name")
   @actor = Actor.find(params.fetch("id").to_i)
-  @actor.update({:first_name => first_name, :last_name => last_name})
+  @actor.update({:name => name})
   redirect("/actors/#{actor_id}")
 end
 
