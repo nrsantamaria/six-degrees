@@ -13,7 +13,7 @@ class Actor < ActiveRecord::Base
         first_degree = [actor.first_name]
         first_degree.unshift(movie.title)
         if actor.id ==(actor_id)
-          return [self.first_name] + first_degree
+          return results = ([self.first_name] + first_degree)
         end
 
         actor.movies.each do |movie|
@@ -22,7 +22,7 @@ class Actor < ActiveRecord::Base
             second_degree = [actor.first_name]
             second_degree.unshift(movie.title)
             if actor.id ==(actor_id)
-              return [self.first_name] + (first_degree + second_degree)
+              return results = ([self.first_name] + (first_degree + second_degree))
             end
 
             actor.movies.each do |movie|
@@ -31,7 +31,7 @@ class Actor < ActiveRecord::Base
                 third_degree = [actor.first_name]
                 third_degree.unshift(movie.title)
                 if actor.id ==(actor_id)
-                  return ([self.first_name] + (first_degree + second_degree + third_degree)).uniq
+                  return results = ([self.first_name] + (first_degree + second_degree + third_degree)).uniq
                 end
               end
             end

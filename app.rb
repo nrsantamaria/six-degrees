@@ -5,6 +5,7 @@ require('./lib/actor')
 require('./lib/movie')
 also_reload('lib/**/*.rb')
 require('pg')
+require('pry')
 
 get("/") do
   @movies = Movie.all()
@@ -15,10 +16,16 @@ end
 post("/degrees") do
   @movies = Movie.all()
   @actors = Actor.all()
-  actor.degrees
-  redirect("/")
+  @actor = Actor.find(params.fetch("id").to_i)
+  actor_two = Actor.find(params.fetch("actor_id").to_i)
+  @degrees = @actor.degrees(actor_two.id)
+  erb(:degrees)
 end
-
+get("/degrees") do
+  @movies = Movie.all()
+  @actors = Actor.all()
+  erb(:degrees)
+end
 post("/movies") do
   title = params.fetch("new_movie")
   @movie = Movie.create({:title => title})

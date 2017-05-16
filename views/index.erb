@@ -5,7 +5,7 @@
 
   <form action="/degrees" method="post">
     <div class="form-group">
-      <select id='actor_id' name='actor_id' type='text' class="form-control" disabled readonly>
+      <select id='id' name='id' type='text' class="form-control">
         <% @actors.each() do |actor| %>
         <option value="<%= actor.id()%>"> <%= actor.first_name %> <%= actor.last_name %></option>
         <% end %>
@@ -18,10 +18,6 @@
     </div>
     <button class="btn btn-info" type="submit">See Degrees</button>
   </form>
-
-
-
-
 
   <h2>Current movies included in database:</h2>
   <h4>Click on a movie name to access their inventory:</h4>
