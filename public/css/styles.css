@@ -1,5 +1,5 @@
 .jumbotron h1 {
-  font-family: 'BioRhyme', serif;
+  font-family: 'Prosto One', cursive;
   text-align: center;
   color: white;
 }
@@ -9,7 +9,7 @@ body {
 }
 
 .jumbotron {
-  background-color: #72D9C6;
+  background-color: #B2E5E0;
 }
 
 .jumbotron h4 {
@@ -32,6 +32,12 @@ body {
   height: 150px;
 }
 
-.btn-danger {
-  background-color: #ed3135;
+.mySlides {
+  display: none;
 }
+
+img {
+  max-width: 500px;
+  height: 230px;
+  width:100%;
+ }
