@@ -8,7 +8,7 @@ require('pg')
 require('pry')
 
 get("/") do
-  @movies = Movie.all()
+  @movies = (Movie.all()).sort
   @actors = Actor.all()
   erb(:index)
 end
@@ -21,11 +21,13 @@ post("/degrees") do
   @degrees = @actor.degrees(actor_two.id)
   erb(:degrees)
 end
+
 get("/degrees") do
   @movies = Movie.all()
   @actors = Actor.all()
   erb(:degrees)
 end
+
 post("/movies") do
   title = params.fetch("new_movie")
   @movie = Movie.create({:title => title})

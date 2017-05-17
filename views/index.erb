@@ -1,19 +1,19 @@
 <div class="jumbotron">
   <h1>Six Degrees</h1>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-sm-4">
       <div class="slide">
         <img class="mySlides" src="../img/smile.jpg">
         <img class="mySlides" src="../img/hair.jpg">
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-sm-4">
       <div class="slide2">
         <img class="mySlides" src="../img/hi.jpg">
         <img class="mySlides" src="../img/head.jpg">
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-sm-4">
       <div class="slide3">
         <img class="mySlides" src="../img/nic.jpeg">
         <img class="mySlides" src="../img/namaste.jpg">
@@ -22,7 +22,7 @@
   </div>
 </div>
 <div class="container">
-
+  <h4>Choose two actors and see how they are connected:</h4>
   <form action="/degrees" method="post">
     <div class="form-group">
       <select id='id' name='id' type='text' class="form-control">
@@ -30,6 +30,7 @@
         <option value="<%= actor.id()%>"> <%= actor.name %></option>
         <% end %>
       </select>
+      <br>
       <select id='actor_id' name='actor_id' type='text' class="form-control">
         <% @actors.each() do |actor| %>
         <option value="<%= actor.id()%>"> <%= actor.name %></option>
@@ -63,13 +64,14 @@
   <h4>Click on a actor name to access their information:</h4>
   <% if @actors.any? %>
     <% @actors.each do |actor| %>
+      <ul>
         <li><a href="/actors/<%= actor.id %>"><%= actor.name %> <%= actor.id %></a></li>
       </ul>
     <% end %>
   <% else %>
     <p>There are no actors in the database yet.</p>
   <%end%>
-<!-- 
+<!--
   <h4>Add actors to the database:</h4>
 
   <form action="/actors" method="post">
