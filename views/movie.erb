@@ -1,34 +1,33 @@
 <div class="jumbotron">
   <h1>Movie Title: <%= @movie.title %></h1>
   <br>
-  <a class="btn btn-default" href="/movie_edit/<%= @movie.id %>">Edit Movie</a>
+  <!-- <a class="btn btn-default" href="/movie_edit/<%= @movie.id %>">Edit Movie</a> -->
 </div>
 <div class="container">
   <h3>Current actors included in movie cast:</h3>
   <% if @movie.actors.any? %>
   <div class="well">
-  <p><em>Click on a actor name to learn more or the 'x' button to remove the actor:</em></p>
+  <p><em>Click on a actor name to learn more:</em></p>
     <% @movie.actors.each do |actor| %>
-        <div class="row">
-          <div class="col-sm-1">
-            <form action="/movies/<%= @movie.id%>/actors/<%= actor.id %>/delete_actor" method="post">
+        <!-- <div class="row">
+          <div class="col-sm-1"> -->
+            <!-- <form action="/movies/<%= @movie.id%>/actors/<%= actor.id %>/delete_actor" method="post">
               <input type="hidden" name="_method" value="delete">
 
               <button type="submit" class="btn btn-danger btn-xs">x</button>
-            </form>
-          </div>
-          <div class="col-sm-11">
-            <a href="/actors/<%= actor.id %>"><%= actor.name %></a>
-          </div>
-        </div>
-        <br>
+            </form> -->
+          <!-- </div>
+          <div class="col-sm-11"> -->
+            <p><a href="/actors/<%= actor.id %>"><%= actor.name %></a></p>
+          <!-- </div>
+        </div> -->
       <% end %>
     <% else %>
       <p>There are no actors in the movie cast.</p>
     <%end%>
   </div>
 
-  <% if @actors.any? %>
+  <!-- <% if @actors.any? %>
     <form action="/movies/<%= @movie.id %>/actors" method="post">
       <div class="form-group">
         <label for="actor_id">Add actors to this movie:</label>
@@ -42,7 +41,7 @@
     </form>
   <% else %>
     <p>There are no actors in this database yet. <a href="/">Click here to add actors to the database.</a></p>
-  <% end %>
+  <% end %> -->
 
   <footer>
     <hr>
