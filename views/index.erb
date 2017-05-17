@@ -1,3 +1,17 @@
+<script>
+ $( function() {
+   var availableTags = [
+    <% @actors.each do |actor| %>
+      "<%= actor.name %>",
+    <% end %>
+   ];
+   $( "#tags" ).autocomplete({
+     source: availableTags
+   });
+ } );
+ </script>
+
+
 <div class="jumbotron">
   <h1>Six Degrees</h1>
   <div class="row">
@@ -40,6 +54,15 @@
     <button class="btn btn-info" type="submit">See Degrees</button>
   </form>
 
+  <div class="ui-widget">
+  <form action="/test" method="post">
+    <label for="test">test</label>
+    <input type="text" name="test" id="tags">
+
+    <button class="btn btn-info" type="submit">test</button>
+  </form>
+  <div>
+
   <h2>Current movies included in database:</h2>
   <h4>Click on a movie name to access their inventory:</h4>
   <% if @movies.any? %>
@@ -52,13 +75,6 @@
     <p>There are no movies in the database yet.</p>
   <%end%>
 
-  <!-- <h4>Add movie to the database:</h4>
-  <form action="/movies" method="post">
-    <label for="new_movie">Add a Movie Name:</label>
-    <input type="text" name="new_movie">
-
-    <button class="btn btn-info" type="submit">Add Movie</button>
-  </form> -->
 
   <h2>Current actors included in database:</h2>
   <h4>Click on a actor name to access their information:</h4>
@@ -71,6 +87,20 @@
   <% else %>
     <p>There are no actors in the database yet.</p>
   <%end%>
+  </div>
+
+
+
+  <!-- <h4>Add movie to the database:</h4>
+  <form action="/movies" method="post">
+  <label for="new_movie">Add a Movie Name:</label>
+  <input type="text" name="new_movie">
+
+  <button class="btn btn-info" type="submit">Add Movie</button>
+</form> -->
+
+
+
 <!--
   <h4>Add actors to the database:</h4>
 
@@ -80,4 +110,3 @@
 
     <button class="btn btn-info" type="submit">Add Actor</button>
   </form>
-</div> -->
