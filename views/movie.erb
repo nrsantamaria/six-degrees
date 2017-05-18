@@ -1,7 +1,10 @@
 <div class="jumbotron">
   <h1>Movie Title: <%= @movie.title %></h1>
-  <br>
 </div>
+<div class ="center">
+  <p><a href="/">Home</a></p>
+</div>
+<hr>
 <div class="container">
   <h3>Current actors included in movie cast:</h3>
   <% if @movie.actors.any? %>
@@ -14,12 +17,4 @@
       <p>There are no actors in the movie cast.</p>
     <%end%>
   </div>
-
-
-  <footer>
-    <hr>
-    <div class ="center">
-      <p><a href="/">Return home</a></p>
-    </div>
-  </footer>
 </div>

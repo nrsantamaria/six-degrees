@@ -23,6 +23,12 @@ body {
   left:50%;
 }
 
+.columns {
+  height: 300px;
+  float: left;
+  padding: 10px;
+}
+
 #degree_btn {
   margin-top: 22%;
 }
