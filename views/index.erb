@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
  $( function() {
    var availableTags = [
     <% @actors.each do |actor| %>
@@ -9,7 +9,7 @@
      source: availableTags
    });
  } );
- </script>
+ </script> -->
 
 
 <div class="jumbotron">
@@ -57,7 +57,7 @@
   <div class="ui-widget">
   <form action="/test" method="post">
     <label for="test">test</label>
-    <input type="text" name="test" id="tags">
+    <textarea type="text" name="test" id="tags" rows="8" cols="40"></textarea>
 
     <button class="btn btn-info" type="submit">test</button>
   </form>

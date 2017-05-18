@@ -13,5 +13,4 @@ function carousel() {
 
 $(document).ready(function(){
   carousel();
-  
 });

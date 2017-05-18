@@ -26,10 +26,7 @@ body {
   text-align: center;
 }
 
-.footer {
-  background-image: url('/img/footer.jpg');
-  height: 150px;
-}
+
 
 .mySlides {
   display: none;
