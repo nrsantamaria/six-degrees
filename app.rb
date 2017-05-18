@@ -17,11 +17,8 @@ end
 post("/degrees") do
   @movies = Movie.all()
   @actors = Actor.all()
-
   @actor = Actor.find_by(name: params.fetch('actor_one'))
   actor_two = Actor.find_by(name: params.fetch('actor_two'))
-
-  # @actor = Actor.find(params.fetch("id").to_i)
   @degrees = @actor.degrees(actor_two.id)
   erb(:degrees)
 end
@@ -117,6 +114,8 @@ get("/load-db") do
 actors_array = ["Robert De Niro",
   "Jack Nicholson",
   "Tom Hanks",
+  "Tom Hardy",
+  "Nicolas Cage",
   "Leonardo DiCaprio",
   "Johnny Depp",
   "Al Pacino",
