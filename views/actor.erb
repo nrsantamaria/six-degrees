@@ -12,7 +12,7 @@
   <% if @actor.movies.any? %>
   <div class="well">
   <p><em>Click on a movie name to access its information:</em></p>
-    <% @actor.movies.each do |movie| %>
+    <% @actor.movies.order(:title).each do |movie| %>
       <p><a href="/movies/<%= movie.id%>"><%= movie.title %></a></p>
     <% end %>
   <% else %>

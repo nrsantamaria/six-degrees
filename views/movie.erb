@@ -10,7 +10,7 @@
   <% if @movie.actors.any? %>
   <div class="well">
   <p><em>Click on a actor name to learn more:</em></p>
-    <% @movie.actors.each do |actor| %>
+    <% @movie.actors.order(:name).each do |actor| %>
             <p><a href="/actors/<%= actor.id %>"><%= actor.name %></a></p>
       <% end %>
     <% else %>

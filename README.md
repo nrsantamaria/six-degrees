@@ -37,6 +37,9 @@ $ atom .
 
 ### Create Database and Tables
 * _In the terminal enter the following commands to start postgres:_
+* _run ruby app.rb in the terminal:_
+* _visit localhost:4567/load-db_
+* _close terminal window that has ruby app.rb after loading desired amount of movies into database_
 
 ```
 $ postgres
@@ -59,7 +62,9 @@ $ ruby app.rb
 
 ## Known Bugs
 
-_No known bugs._
+_If autocomplete is not working, inspect element and click error message and it will display the actors name that is causing the error_
+_Example Brad "Chip" Pope, Rodney "Bear" Jackson._
+_Find the actor by their id, and delete the actor from your database._
 
 ## Support and contact details
 
