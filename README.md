@@ -78,6 +78,10 @@ _Please contact Nicole Santamaria at NicoleRSantamaria@gmail.com if you have any
 * Sinatra
 
 
+### API
+
+*API from [IMDB](http://www.imdb.com/)*
+
 ### License
 
 *This software is licensed under MIT license.*
