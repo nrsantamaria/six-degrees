@@ -90,7 +90,7 @@ Copyright (c) 2017 **_Nicole Santamaria, James Higgins, Nick Powell, Jason Ainsw
 
 
 
-![page](/public/img/.png)
-![ page](/public/img/.png)
-![page](/public/img/.png)
-![ page](/public/img/.png)
+![Home page](/public/img/home-screenshot.png)
+![Degrees page](/public/img/degree-screenshot.png)
+![Movies page](/public/img/movie-screenshot.png)
+![Actors page](/public/img/actor-screenshot.png)
