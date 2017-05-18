@@ -63,34 +63,18 @@
   </form>
   <div>
 
-  <h2>Current movies included in database:</h2>
-  <h4>Click on a movie name to access their inventory:</h4>
-  <% if @movies.any? %>
-    <% @movies.each do |movie| %>
-      <ul>
-        <li><a href="/movies/<%= movie.id %>"><%= movie.title %></a></li>
-      </ul>
-    <% end %>
-  <% else %>
-    <p>There are no movies in the database yet.</p>
-  <%end%>
 
 
-  <h2>Current actors included in database:</h2>
-  <h4>Click on a actor name to access their information:</h4>
-  <% if @actors.any? %>
-    <% @actors.each do |actor| %>
-      <ul>
-        <li><a href="/actors/<%= actor.id %>"><%= actor.name %> <%= actor.id %></a></li>
-      </ul>
-    <% end %>
-  <% else %>
-    <p>There are no actors in the database yet.</p>
-  <%end%>
+
+    <footer>
+      <hr>
+      <div class ="center">
+        <p><a href="/movies">Movies</a> | <a href="/actors">Actors</a></p>
+      </div>
+    </footer>
+
+
   </div>
-
-
-
   <!-- <h4>Add movie to the database:</h4>
   <form action="/movies" method="post">
   <label for="new_movie">Add a Movie Name:</label>

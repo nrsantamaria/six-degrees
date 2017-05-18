@@ -26,10 +26,6 @@ body {
   text-align: center;
 }
 
-.footer {
-  background-image: url('/img/footer.jpg');
-  height: 150px;
-}
 
 .mySlides {
   display: none;
@@ -43,4 +39,9 @@ img {
 
  * {
    cursor: url(../img/degree_cursor.png), progress !important;
+ }
+
+ .sm_text {
+   font-size: 20px;
+   color: #B2A779;
  }
