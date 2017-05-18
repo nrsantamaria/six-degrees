@@ -17,8 +17,11 @@ end
 post("/degrees") do
   @movies = Movie.all()
   @actors = Actor.all()
-  @actor = Actor.find(params.fetch("id").to_i)
-  actor_two = Actor.find(params.fetch("actor_id").to_i)
+
+  @actor = Actor.find_by(name: params.fetch('actor_one'))
+  actor_two = Actor.find_by(name: params.fetch('actor_two'))
+
+  # @actor = Actor.find(params.fetch("id").to_i)
   @degrees = @actor.degrees(actor_two.id)
   erb(:degrees)
 end

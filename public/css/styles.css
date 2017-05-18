@@ -41,3 +41,9 @@ img {
  * {
    cursor: url(../img/degree_cursor.png), progress !important;
  }
+
+.ui-autocomplete {
+  background-color: #B2E5E0;
+  border-radius: 10px;
+  width: 30%;
+}
