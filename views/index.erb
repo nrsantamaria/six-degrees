@@ -35,43 +35,51 @@
     </div>
   </div>
 </div>
+
 <div class="container">
   <h4>Choose two actors and see how they are connected:</h4>
-  <form action="/degrees" method="post">
-    <div class="form-group">
-      <select id='id' name='id' type='text' class="form-control">
-        <% @actors.each() do |actor| %>
-        <option value="<%= actor.id()%>"> <%= actor.name %></option>
-        <% end %>
-      </select>
-      <br>
-      <select id='actor_id' name='actor_id' type='text' class="form-control">
-        <% @actors.each() do |actor| %>
-        <option value="<%= actor.id()%>"> <%= actor.name %></option>
-        <% end %>
-      </select>
+  <div class="row">
+    <div class="col-sm-9">
+      <form action="/degrees" method="post">
+        <div class="col-sm-5">
+          <select id='id' name='id' type='text' class="form-control">
+            <% @actors.each() do |actor| %>
+            <option value="<%= actor.id()%>"> <%= actor.name %></option>
+            <% end %>
+          </select>
+        </div>
+        <div class="col-sm-5">
+          <select id='actor_id' name='actor_id' type='text' class="form-control">
+            <% @actors.each() do |actor| %>
+            <option value="<%= actor.id()%>"> <%= actor.name %></option>
+            <% end %>
+          </select>
+        </div>
+        <div class="col-sm-2">
+          <button class="btn btn-info" type="submit">See Degrees</button>
+
+        </div>
+      </form>
     </div>
-    <button class="btn btn-info" type="submit">See Degrees</button>
-  </form>
 
-  <div class="ui-widget">
-  <form action="/test" method="post">
-    <label for="test">test</label>
-    <input type="text" name="test" id="tags">
+    <div class="col-sm-3">
+      <footer>
+        <h3>What is six degrees?</h3>
+        <p>Six degrees of separation is the idea that all living things and everything else in the world are six or fewer steps away from each other so that a chain of "a friend of a friend" statements can be made to connect any two people in a maximum of six steps. It was originally set out by Frigyes Karinthy in 1929 and popularized in an eponymous 1990 play written by John Guare.
+        </p>
+        <hr>
+        <div class ="center">
+          <p>To view all movies or actors in the database, click below
+          </p>
+          <p><a href="/movies">Movies</a> | <a href="/actors">Actors</a></p>
+        </div>
+      </footer>
 
-    <button class="btn btn-info" type="submit">test</button>
-  </form>
-  <div>
+    </div>
+  </div>
 
 
 
-
-    <footer>
-      <hr>
-      <div class ="center">
-        <p><a href="/movies">Movies</a> | <a href="/actors">Actors</a></p>
-      </div>
-    </footer>
 
 
   </div>
