@@ -18,64 +18,78 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="slide">
-        <img class="mySlides" src="../img/smile.jpg">
-        <img class="mySlides" src="../img/hair.jpg">
+        <img class="mySlides" src="../img/love_cage.gif">
+        <img class="mySlides" src="../img/wink_cage.gif">
+        <img class="mySlides" src="../img/prison_cage.gif">
+        <img class="mySlides" src="../img/can_cage.gif">
+        <img class="mySlides" src="../img/ello_cage.gif">
       </div>
     </div>
     <div class="col-sm-4">
       <div class="slide2">
-        <img class="mySlides" src="../img/hi.jpg">
-        <img class="mySlides" src="../img/head.jpg">
+        <img class="mySlides" src="../img/liquor_cage.gif">
+        <img class="mySlides" src="../img/roar_cage.gif">
+        <img class="mySlides" src="../img/look_cage.gif">
+        <img class="mySlides" src="../img/hand_cage.gif">
+        <img class="mySlides" src="../img/fairy_cage.gif">
+        <img class="mySlides" src="../img/rage_cage.gif">
       </div>
     </div>
     <div class="col-sm-4">
       <div class="slide3">
-        <img class="mySlides" src="../img/nic.jpeg">
-        <img class="mySlides" src="../img/namaste.jpg">
+        <img class="mySlides" src="../img/ok_cage.gif">
+        <img class="mySlides" src="../img/60_cage.gif">
+        <img class="mySlides" src="../img/hungry_cage.gif">
+        <img class="mySlides" src="../img/sunglass_cage.gif">
+        <img class="mySlides" src="../img/smile_cage.gif">
+        <img class="mySlides" src="../img/jump_cage.gif">
       </div>
     </div>
   </div>
 </div>
+
 <div class="container">
-  <h4>Choose two actors and see how they are connected:</h4>
 
-
-  <div class="ui-widget">
-    <form action="/degrees" method="post">
-      <div class="form-group">
-        <label for="test">test</label>
-        <input type="text" name="actor_one" class="tags" "form-control">
-        <label for="test2">test</label>
-        <input type="text" name="actor_two" class="tags">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="center">
+        <h4>Choose two actors and see how they are connected:</h4>
+      </div>
+      <div class="ui-widget">
+        <form action="/degrees" method="post">
+          <div class="col-sm-5">
+            <label for="actor_one">Enter A Name For The First Actor:</label>
+            <input type="text" id="actor_one" name="actor_one" class="tags form-control">
+          </div>
+          <div class="col-sm-5">
+            <label for="actor_two">Enter A Name For The Second Actor:</label>
+            <input type="text" name="actor_two" class="tags form-control" id="actor_two">
+          </div>
+          <div class="col-sm-2">
+            <button class="btn btn-info" type="submit">See Degrees</button>
+          </div>
+        </form>
+      </div>
     </div>
-    <button class="btn btn-info" type="submit">test2</button>
-    </form>
+
+
+    <div class="col-sm-3">
+      <footer>
+        <h3>What is six degrees?</h3>
+        <p>Six degrees of separation is the idea that all living things and everything else in the world are six or fewer steps away from each other so that a chain of "a friend of a friend" statements can be made to connect any two people in a maximum of six steps. It was originally set out by Frigyes Karinthy in 1929 and popularized in an eponymous 1990 play written by John Guare.
+        </p>
+        <hr>
+        <div class ="center">
+          <p>To view all movies or actors in the database, click below
+          </p>
+          <p><a href="/movies">Movies</a> | <a href="/actors">Actors</a></p>
+        </div>
+      </footer>
+    </div>
   </div>
 
 
 
-  <h2>Current movies included in database:</h2>
-  <h4>Click on a movie name to access their inventory:</h4>
-  <% if @movies.any? %>
-    <% @movies.each do |movie| %>
-      <ul>
-        <li><a href="/movies/<%= movie.id %>"><%= movie.title %></a></li>
-      </ul>
-    <% end %>
-  <% else %>
-    <p>There are no movies in the database yet.</p>
-  <%end%>
 
 
-  <h2>Current actors included in database:</h2>
-  <h4>Click on a actor name to access their information:</h4>
-  <% if @actors.any? %>
-    <% @actors.each do |actor| %>
-      <ul>
-        <li><a href="/actors/<%= actor.id %>"><%= actor.name %> <%= actor.id %></a></li>
-      </ul>
-    <% end %>
-  <% else %>
-    <p>There are no actors in the database yet.</p>
-  <%end%>
   </div>

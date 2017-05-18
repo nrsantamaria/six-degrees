@@ -1,0 +1,25 @@
+<div class="jumbotron">
+  <h1>Movies:</h1>
+
+</div>
+<div class="container">
+
+  <h2>Current movies included in database:</h2>
+  <h4>Click on a movie name to access their inventory:</h4>
+  <% if @movies.any? %>
+  <% @movies.each do |movie| %>
+  <ul>
+    <li><a href="/movies/<%= movie.id %>"><%= movie.title %></a></li>
+  </ul>
+  <% end %>
+  <% else %>
+  <p>There are no movies in the database yet.</p>
+  <%end%>
+
+  <footer>
+    <hr>
+    <div class ="center">
+      <p><a href="/">Home</a></p>
+    </div>
+  </footer>
+</div>

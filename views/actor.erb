@@ -5,14 +5,12 @@
 <div class="container">
 
 
-  <h3>Current movies that have this actor in their cast:</h3>
+  <h3>Movies that this actor is in:</h3>
   <% if @actor.movies.any? %>
   <div class="well">
-  <p><em>Click on a movie name to access their information:</em></p>
+  <p><em>Click on a movie name to access its information:</em></p>
     <% @actor.movies.each do |movie| %>
-      <ul>
-        <li><a href="/movies/<%= movie.id%>"><%= movie.title %></a></li>
-      </ul>
+      <p><a href="/movies/<%= movie.id%>"><%= movie.title %></a></p>
     <% end %>
   <% else %>
     <p>There are no movies that have this actor in their cast.</p>

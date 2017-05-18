@@ -26,8 +26,6 @@ body {
   text-align: center;
 }
 
-
-
 .mySlides {
   display: none;
 }
@@ -47,3 +45,8 @@ img {
   border-radius: 10px;
   width: 30%;
 }
+
+ .sm_text {
+   font-size: 20px;
+   color: #B2A779;
+ }
