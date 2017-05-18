@@ -19,12 +19,12 @@ describe('six degrees path', {:type => :feature}) do
     expect(page).to have_content('Actor Connection')
   end
 end
-# describe('six degrees path for errors', {:type => :feature}) do
-#   it('will show the seperation') do
-#     visit('/')
-#     fill_in('Enter A Name For The First Actor:', :with => ' ')
-#     fill_in('Enter A Name For The Second Actor:', :with => ' ')
-#     click_button('See Degrees')
-#     expect(page).to have_content('Oops')
-#   end
-# end
+describe('six degrees path for errors', {:type => :feature}) do
+  it('will show the seperation') do
+    visit('/')
+    fill_in('Enter A Name For The First Actor:', :with => ' ')
+    fill_in('Enter A Name For The Second Actor:', :with => ' ')
+    click_button('See Degrees')
+    expect(page).to have_content('Oops')
+  end
+end

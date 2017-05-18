@@ -22,13 +22,10 @@ body {
   top:50%;
   left:50%;
 }
-.well {
-  background-color: #B2A779;
-}
-.columns {
-  height: 300px;
-  float: left;
-  padding: 10px;
+
+iframe {
+  margin: 0 auto;
+  display: block;
 }
 
 #degree_btn {
