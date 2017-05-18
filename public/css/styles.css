@@ -26,8 +26,6 @@ body {
   text-align: center;
 }
 
-
-
 .mySlides {
   display: none;
 }
@@ -40,4 +38,9 @@ img {
 
  * {
    cursor: url(../img/degree_cursor.png), progress !important;
+ }
+
+ .sm_text {
+   font-size: 20px;
+   color: #B2A779;
  }

@@ -14,6 +14,16 @@ get("/") do
   erb(:index)
 end
 
+get("/movies") do
+  @movies = Movie.all()
+  erb(:movies)
+end
+
+get("/actors") do
+  @actors = Actor.all()
+  erb(:actors)
+end
+
 post("/degrees") do
   @movies = Movie.all()
   @actors = Actor.all()
