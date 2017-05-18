@@ -1,6 +1,6 @@
 # _Six Degrees_
 
-#### _This app will allow users to view movies and actors in a database and modify their information, Wednesday, May 17, 2017_
+#### _This app will allow users to view movies and actors in a database, Wednesday, May 17, 2017_
 
 #### By _**Nicole Santamaria, James Higgins, Nick Powell, Jason Ainsworth**_
 
@@ -12,9 +12,10 @@ _This app will use a ActiveRecord to track movies and actors through a many-to-m
 
 | Behavior |  Input   |  Output  |
 |----------|:--------:|:--------:|
-|goes to homepage| user visits homepage | all movies and actors listed on page|
+|goes to homepage| user visits homepage | and sees two forms to add two different actors names|
+|submit two forms to see the degree| the user inputs two actors | user sees the separation between the two inputted actors|
 |clicks on individual movie | user goes to the movie page | user sees the cast of the movie |
-|user clicks on the individual actor link | user taken to actor page | user can see ability to delete or modify actor|
+|user clicks on the individual actor link | user taken to actor page | user can see all movies the actor has been in |
 
 ## Setup/Installation Requirements
 
@@ -68,13 +69,24 @@ _Please contact Nicole Santamaria at NicoleRSantamaria@gmail.com if you have any
 
 * HTML
 * CSS
+* JavaScript
+* Jquery
 * Bootstrap
 * Postgres
+* psql
 * Ruby
 * Sinatra
+
 
 ### License
 
 *This software is licensed under MIT license.*
 
 Copyright (c) 2017 **_Nicole Santamaria, James Higgins, Nick Powell, Jason Ainsworth_**
+
+
+
+![page](/public/img/.png)
+![ page](/public/img/.png)
+![page](/public/img/.png)
+![ page](/public/img/.png)
