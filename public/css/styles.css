@@ -22,8 +22,16 @@ body {
   top:50%;
   left:50%;
 }
+
+#degree_btn {
+  margin-top: 22%;
+}
 .center {
   text-align: center;
+}
+
+.justify {
+  text-align: justify;
 }
 
 .mySlides {
