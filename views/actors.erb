@@ -10,7 +10,7 @@
   <h4>Click on a actor name to access their information:</h4>
   <div class="columns">
     <% if @actors.any? %>
-      <% @actors.each do |actor| %>
+      <% @actors.order(:name).each do |actor| %>
         <ul>
           <li><a href="/actors/<%= actor.id %>"><%= actor.name %></a></li>
         </ul>

@@ -66,3 +66,7 @@ img {
    font-size: 20px;
    color: #B2A779;
  }
+
+ .ui-helper-hidden-accessible {
+   display: none;
+ }

@@ -10,7 +10,7 @@
   <h4>Click on a movie name to access their inventory:</h4>
   <div class="columns">
     <% if @movies.any? %>
-    <% @movies.each do |movie| %>
+    <% @movies.order(:title).each do |movie| %>
     <ul>
       <li><a href="/movies/<%= movie.id %>"><%= movie.title %></a></li>
     </ul>
