@@ -41,4 +41,53 @@ class Movie < ActiveRecord::Base
     actor_id = JSON.parse(response)['results'][0]['id']
   end
 
+  def self.Load_movies
+    actors_array = ["Robert De Niro",
+      "Jack Nicholson",
+      "Tom Hanks",
+      "Tom Hardy",
+      "Nicolas Cage",
+      "Leonardo DiCaprio",
+      "Johnny Depp",
+      "Al Pacino",
+      "Denzel Washington",
+      "Brad Pitt",
+      "Daniel Day-Lewis",
+      "Tom Cruise",
+      "Cary Grant",
+      "Dustin Hoffman",
+      "Sean Penn",
+      "Christian Bale",
+      "Gregory Peck",
+      "Harrison Ford",
+      "George Clooney"
+    ]
+
+    movie = Movie.new
+
+    actors_array.each do |actor_name|
+      movies = movie.find_movies(movie.find_actor_id(actor_name))
+      actor_name2 = actor_name
+      movies.each do |movie|
+        if Movie.exists?(title: movie[:title])
+          current_movie = Movie.find_by title: movie[:title]
+        else
+          new_movie = Movie.create(title: movie[:title])
+          if Actor.exists?(name: actor_name2) && Movie.exists?(current_movie)
+            actor = Actor.find_by name: actor_name2
+            actor.movies.push(current_movie)
+          else
+            movie[:actors].each do |actor|
+              if Actor.exists?(name: actor)
+                current_actor = Actor.find_by name: actor
+                new_movie.actors.push(current_actor)
+              else
+                new_movie.actors.push(Actor.create(name: actor))
+              end
+            end
+          end
+        end
+      end
+    end
+  end
 end
