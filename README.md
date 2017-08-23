@@ -28,6 +28,7 @@ _This app will use a ActiveRecord to track movies and actors through a many-to-m
 $ cd desktop
 $ git clone https://github.com/nrsantamaria/six-degrees.git
 $ cd six-degrees
+$ bundle install
 $ atom .
 ```
 * _This will open all of the files included in the six-degree folder including Gemfile, Gemfile.lock, app.rb, README.md, views folder, spec folder, public folder, lib folder_
@@ -99,3 +100,8 @@ Copyright (c) 2017 **_Nicole Santamaria, James Higgins, Nick Powell, Jason Ainsw
 ![Degrees page](/public/img/degree-screenshot.png)
 ![Movies page](/public/img/movie-screenshot.png)
 ![Actors page](/public/img/actor-screenshot.png)
+
+## Resources
+* https://stackoverflow.com/questions/2721880/ruby-on-rails-send-javascript-variable-from-controller-to-external-javascript
+* http://railscasts.com/episodes/324-passing-data-to-javascript?view=asciicast
+* https://devcenter.heroku.com/articles/heroku-postgresql

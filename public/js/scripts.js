@@ -37,8 +37,24 @@ function carousel3() {
   x[myIndex3-1].style.display = "block";
   setTimeout(carousel3, 5000); // Change image every 6 seconds
 }
+
+function getTags() {
+  var actors = ;
+  console.log(actors);
+
+  var availableTags = [
+    actors.forEach(function(actor){
+      "actor.name";
+    })
+  ];
+  $( ".tags" ).autocomplete({
+    source: availableTags,
+    minLength: 3,
+  });
+}
 $(document).ready(function(){
   carousel();
   carousel2();
   carousel3();
+  getTags();
 });

@@ -1,17 +1,3 @@
-<script>
- $( function() {
-   var availableTags = [
-    <% @actors.each do |actor| %>
-      "<%= actor.name %>",
-    <% end %>
-   ];
-   $( ".tags" ).autocomplete({
-     source: availableTags,
-     minLength: 3,
-   });
- } );
- </script>
-
 <div class="jumbotron">
   <h1>Six Degrees</h1>
   <div class="row">
