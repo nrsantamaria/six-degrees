@@ -8,6 +8,22 @@
 
 _This app will use a ActiveRecord to track movies and actors through a many-to-many relationship. Users will be able to see the relationship between two actors._
 
+## Technologies Used
+
+* HTML
+* CSS
+* JavaScript
+* Jquery
+* Bootstrap
+* Postgres
+* psql
+* Ruby
+* Sinatra
+
+### API
+
+*API from [IMDB](http://www.imdb.com/)*
+
 ## Specifications:
 
 | Behavior |  Input   |  Output  |
@@ -44,6 +60,7 @@ $ atom .
 
 ```
 $ postgres
+
 ```
 * _Open another tab in the terminal enter the following commands to start the databases needed for this program:_
 
@@ -71,22 +88,7 @@ _Find the actor by their id, and delete the actor from your database._
 
 _Please contact Nicole Santamaria at NicoleRSantamaria@gmail.com if you have any questions._
 
-## Technologies Used
 
-* HTML
-* CSS
-* JavaScript
-* Jquery
-* Bootstrap
-* Postgres
-* psql
-* Ruby
-* Sinatra
-
-
-### API
-
-*API from [IMDB](http://www.imdb.com/)*
 
 ### License
 
@@ -94,14 +96,14 @@ _Please contact Nicole Santamaria at NicoleRSantamaria@gmail.com if you have any
 
 Copyright (c) 2017 **_Nicole Santamaria, James Higgins, Nick Powell, Jason Ainsworth_**
 
-
-
+## Home Page
 ![Home page](/public/img/home-screenshot.png)
-![Degrees page](/public/img/degree-screenshot.png)
-![Movies page](/public/img/movie-screenshot.png)
-![Actors page](/public/img/actor-screenshot.png)
 
-## Resources
-* https://stackoverflow.com/questions/2721880/ruby-on-rails-send-javascript-variable-from-controller-to-external-javascript
-* http://railscasts.com/episodes/324-passing-data-to-javascript?view=asciicast
-* https://devcenter.heroku.com/articles/heroku-postgresql
+## Degrees Page
+![Degrees page](/public/img/degree-screenshot.png)
+
+## Movies Page
+![Movies page](/public/img/movie-screenshot.png)
+
+## Actors Page
+![Actors page](/public/img/actor-screenshot.png)

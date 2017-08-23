@@ -1,4 +1,3 @@
-
 var myIndex = 0;
 function carousel() {
   var i;
@@ -38,20 +37,15 @@ function carousel3() {
   setTimeout(carousel3, 5000); // Change image every 6 seconds
 }
 
+var availableTags = [];
 function getTags() {
-  var actors = ;
-  console.log(actors);
-
-  var availableTags = [
-    actors.forEach(function(actor){
-      "actor.name";
-    })
-  ];
   $( ".tags" ).autocomplete({
     source: availableTags,
     minLength: 3,
   });
 }
+
+
 $(document).ready(function(){
   carousel();
   carousel2();

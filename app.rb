@@ -7,6 +7,7 @@ require('pry')
 require('./lib/actor')
 require('./lib/movie')
 require('rest-client')
+require('json')
 
 get("/") do
   @movies = (Movie.all()).sort

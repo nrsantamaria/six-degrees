@@ -1,3 +1,11 @@
+<script>
+  var availableTags = [
+    <% @actors.each do |actor| %>
+      "<%= actor.name %>",
+    <% end %>
+  ];
+</script>
+
 <div class="jumbotron">
   <h1>Six Degrees</h1>
   <div class="row">
