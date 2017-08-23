@@ -129,3 +129,7 @@ get("/load-db") do
   movies = Movie.Load_movies
   erb :test
 end
+
+get('/about') do
+  erb :about
+end

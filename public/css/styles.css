@@ -27,7 +27,9 @@ iframe {
   margin: 0 auto;
   display: block;
 }
-
+#info-icon {
+  font-size: 16px;
+}
 #degree_btn {
   margin-top: 22%;
 }
@@ -50,7 +52,7 @@ img {
  }
 
  * {
-   cursor: url(../img/degree_cursor.png), progress !important;
+  cursor: url(../img/degree_cursor.png), progress !important;
  }
 
 .ui-autocomplete {
@@ -59,11 +61,22 @@ img {
   width: 30%;
 }
 
- .sm_text {
-   font-size: 20px;
-   color: #B2A779;
+.sm_text {
+  font-size: 20px;
+  color: #B2A779;
  }
 
  .ui-helper-hidden-accessible {
-   display: none;
+  display: none;
  }
+
+.github {
+  width: 80px;
+  height: 70px;
+}
+
+.github-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

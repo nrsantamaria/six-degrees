@@ -78,6 +78,10 @@ $ ruby app.rb
 ```
 * _Open your browser and enter `localhost:4567` as the URL path._
 
+### Launching the Project to Heroku
+
+
+
 ## Known Bugs
 
 _If autocomplete is not working, inspect element and click error message and it will display the actors name that is causing the error_
@@ -87,8 +91,6 @@ _Find the actor by their id, and delete the actor from your database._
 ## Support and contact details
 
 _Please contact Nicole Santamaria at NicoleRSantamaria@gmail.com if you have any questions._
-
-
 
 ### License
 
