@@ -126,8 +126,12 @@ delete("/actor_delete/:id") do
 end
 
 get("/load-db") do
-  movies = Movie.Load_movies
-  erb :test
+  if Actor.count <= 7500
+    movies = Movie.Load_movies
+    erb :test
+  else
+    redirect("/")
+  end
 end
 
 get('/about') do
