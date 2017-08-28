@@ -1,5 +1,4 @@
 source("https://rubygems.org")
-# ruby "2.2.2"
 
 gem("sinatra-contrib", :require => "sinatra/reloader")
 gem("sinatra-activerecord")
@@ -12,3 +11,6 @@ gem("capybara")
 gem("shoulda-matchers", "~> 2.0")
 gem('rest-client')
 gem("simplecov", require: false)
+
+
+ruby '2.4.1'
