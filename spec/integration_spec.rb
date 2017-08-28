@@ -11,6 +11,13 @@ describe('the home page', {:type => :feature}) do
   end
 end
 
+describe('the about page', {:type => :feature}) do
+  it('has a content') do
+    visit('/about')
+    expect(page).to have_content('About')
+  end
+end
+
 describe('the movies page', {:type => :feature}) do
   it('has a content') do
     visit('/movies')
@@ -60,7 +67,7 @@ describe('six degrees path', {:type => :feature}) do
   end
 end
 describe('six degrees path for errors', {:type => :feature}) do
-  it('will show the seperation') do
+  it('will show an error page') do
     visit('/')
     fill_in('Enter A Name For The First Actor:', :with => ' ')
     fill_in('Enter A Name For The Second Actor:', :with => ' ')

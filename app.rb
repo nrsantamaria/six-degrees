@@ -44,18 +44,18 @@ get("/degrees") do
   @actors = Actor.all()
   erb(:degrees)
 end
-
-post("/movies") do
-  title = params.fetch("new_movie")
-  @movie = Movie.create({:title => title})
-  redirect("/")
-end
-
-post("/actors") do
-  name = params.fetch("actor_name")
-  @actor = Actor.create({:name => name})
-  redirect("/")
-end
+#
+# post("/movies") do
+#   title = params.fetch("new_movie")
+#   @movie = Movie.create({:title => title})
+#   redirect("/")
+# end
+#
+# post("/actors") do
+#   name = params.fetch("actor_name")
+#   @actor = Actor.create({:name => name})
+#   redirect("/")
+# end
 
 get("/movies/:id") do
   @movie = Movie.find(params.fetch("id").to_i)
@@ -63,67 +63,67 @@ get("/movies/:id") do
   erb(:movie)
 end
 
-post("/movies/:id/actors") do
-  @movie = Movie.find(params.fetch("id").to_i)
-  actor_id = params.fetch("actor_id").to_i
-  @actor = Actor.find(actor_id)
-  @actor.movies.push(@movie)
-  redirect("/movies/#{@movie.id}")
-end
-
-delete("/movies/:movie_id/actors/:actor_id/delete_actor") do
-  movie_id = params.fetch("movie_id").to_i
-  actor_id = params.fetch("actor_id").to_i
-  @movie = Movie.find(movie_id)
-  @actor = Actor.find(actor_id)
-  @movie.actors.destroy(@actor)
-  redirect("/movies/#{@movie.id}")
-end
+# post("/movies/:id/actors") do
+#   @movie = Movie.find(params.fetch("id").to_i)
+#   actor_id = params.fetch("actor_id").to_i
+#   @actor = Actor.find(actor_id)
+#   @actor.movies.push(@movie)
+#   redirect("/movies/#{@movie.id}")
+# end
+#
+# delete("/movies/:movie_id/actors/:actor_id/delete_actor") do
+#   movie_id = params.fetch("movie_id").to_i
+#   actor_id = params.fetch("actor_id").to_i
+#   @movie = Movie.find(movie_id)
+#   @actor = Actor.find(actor_id)
+#   @movie.actors.destroy(@actor)
+#   redirect("/movies/#{@movie.id}")
+# end
 
 get("/actors/:id") do
   @actor = Actor.find(params.fetch("id").to_i)
   erb(:actor)
 end
 
-get("/movie_edit/:id") do
-  @movie = Movie.find_by(id: params.fetch("id").to_i)
-  erb(:movie_edit)
-end
+# get("/movie_edit/:id") do
+#   @movie = Movie.find_by(id: params.fetch("id").to_i)
+#   erb(:movie_edit)
+# end
 
-patch("/movie_edit/:id") do
-  movie_id = params.fetch("id").to_i
-  title = params.fetch("new_movie_title")
-  @movie = Movie.find(params.fetch("id").to_i)
-  @movie.update({:title => title})
-  redirect("/movies/#{movie_id}")
-end
+# patch("/movie_edit/:id") do
+#   movie_id = params.fetch("id").to_i
+#   title = params.fetch("new_movie_title")
+#   @movie = Movie.find(params.fetch("id").to_i)
+#   @movie.update({:title => title})
+#   redirect("/movies/#{movie_id}")
+# end
+#
+# delete("/movie_delete/:id") do
+#   movie_id = params.fetch("id").to_i
+#   @movie = Movie.find(params.fetch("id").to_i)
+#   @movie.delete
+#   redirect("/")
+# end
+# 
+# get("/actor_edit/:id") do
+#   @actor = Actor.find_by(id: params.fetch("id").to_i)
+#   erb(:actor_edit)
+# end
 
-delete("/movie_delete/:id") do
-  movie_id = params.fetch("id").to_i
-  @movie = Movie.find(params.fetch("id").to_i)
-  @movie.delete
-  redirect("/")
-end
-
-get("/actor_edit/:id") do
-  @actor = Actor.find_by(id: params.fetch("id").to_i)
-  erb(:actor_edit)
-end
-
-patch("/actor_edit/:id") do
-  actor_id = params.fetch("id").to_i
-  name = params.fetch("new_actor_name")
-  @actor = Actor.find(params.fetch("id").to_i)
-  @actor.update({:name => name})
-  redirect("/actors/#{actor_id}")
-end
-
-delete("/actor_delete/:id") do
-  actor_id = params.fetch("id").to_i
-  @actor = Actor.find(params.fetch("id").to_i)
-  @actor.delete
-  redirect("/")
-end
+# patch("/actor_edit/:id") do
+#   actor_id = params.fetch("id").to_i
+#   name = params.fetch("new_actor_name")
+#   @actor = Actor.find(params.fetch("id").to_i)
+#   @actor.update({:name => name})
+#   redirect("/actors/#{actor_id}")
+# end
+#
+# delete("/actor_delete/:id") do
+#   actor_id = params.fetch("id").to_i
+#   @actor = Actor.find(params.fetch("id").to_i)
+#   @actor.delete
+#   redirect("/")
+# end
 
 get("/load-db") do
   if Actor.count <= 7500
