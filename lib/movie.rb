@@ -42,7 +42,8 @@ class Movie < ActiveRecord::Base
   end
 
   def self.Load_movies
-    actors_array = ["Robert De Niro",
+    actors_array = ["Nicolas Cage",
+      "Robert De Niro",
       "Jack Nicholson",
       "Tom Hanks",
       "Tom Hardy",
