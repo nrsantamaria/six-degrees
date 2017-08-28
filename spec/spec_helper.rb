@@ -5,6 +5,9 @@ require("pg")
 require("sinatra/activerecord")
 require("actor")
 require("movie")
+require("simplecov")
+
+SimpleCov.start
 
 RSpec.configure do |config|
   config.after(:each) do

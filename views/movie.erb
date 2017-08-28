@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h1>Movie Title: <%= @movie.title %></h1>
+  <h1>Movie Title: <i>"<%= @movie.title %>"</i></h1>
 </div>
 <div class ="center">
   <p><a href="/">Home</a></p>
@@ -9,7 +9,7 @@
   <h3>Current actors included in movie cast:</h3>
   <% if @movie.actors.any? %>
   <div class="well">
-  <p><em>Click on a actor name to learn more:</em></p>
+  <p><em>Click on an actor name to learn more:</em></p>
     <% @movie.actors.order(:name).each do |actor| %>
             <p><a href="/actors/<%= actor.id %>"><%= actor.name %></a></p>
       <% end %>
