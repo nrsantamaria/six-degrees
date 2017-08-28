@@ -15,7 +15,7 @@ describe(Actor) do
     movie1 = Movie.create({:title => "Con Air", :year => "1997", :actor_ids => [actor1.id, actor2.id]})
     movie2 = Movie.create({:title => "Don Air", :year => "1999", :actor_ids => [actor1.id]})
     movie3 = Movie.create({:title => "The Cobbler", :year => "1999", :actor_ids => [actor2.id, actor3.id]})
-    expect(actor1.degrees(actor3.id)).to(eq([actor1.name, movie1.title, actor2.name, movie3.title, actor3.name]))
+    expect(actor1.degrees(actor3.id)).to(eq("#{actor1.name}" "<br><span class='sm_text'> was in </span><br>" "\"#{movie1.title}\"" "<br><span class='sm_text'> with </span><br>" "#{actor2.name}" "<br><span class='sm_text'> who was in </span><br>" "\"#{movie3.title}\"" "<br><span class='sm_text'> with </span><br>" "#{actor3.name}"))
   end
   it("returns path actors are in") do
     actor1 = Actor.create({:name => "nic cage"})
