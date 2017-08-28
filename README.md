@@ -17,9 +17,6 @@ _This app will use a ActiveRecord to track movies and actors through a many-to-m
 * psql
 * Ruby
 * Sinatra
-
-### API
-
 * API from [IMDB](http://www.imdb.com/)
 
 ## Specifications:
@@ -45,29 +42,23 @@ $ rake db:create
 $ rake db:migrate
 $ rake db:test:prepare
 ```
-* _In the terminal enter the following commands to start postgres:_
-* _run `$ ruby app.rb` in the terminal:_
-* _visit `localhost:4567/load-db`_
-* _close terminal window that has ruby app.rb after loading desired amount of movies into database_
+### Load Database
+* `$ ruby app.rb`
+* visit `localhost:4567/load-db`
+* refresh the page
 
 ### Run the Program
 ```
 $ ruby app.rb
 ```
-* _Open your browser and enter `localhost:4567` as the URL path._
-
-### Launching the Project to Heroku
-
-
+* Open your browser and enter `localhost:4567` as the URL path.
 
 ## Known Bugs
-
 _If autocomplete is not working, inspect element and click error message and it will display the actors name that is causing the error_
-_Example Brad "Chip" Pope, Rodney "Bear" Jackson._
-_Find the actor by their id, and delete the actor from your database._
+* Example _Brad "Chip" Pope_, _Rodney "Bear" Jackson._
+* Find the actor by their id, and delete the actor from your database.
 
 ## Support and contact details
-
 _Please contact Nicole Santamaria at NicoleRSantamaria@gmail.com if you have any questions._
 
 ### License
@@ -76,6 +67,7 @@ _Please contact Nicole Santamaria at NicoleRSantamaria@gmail.com if you have any
 
 Copyright (c) 2017 **_Nicole Santamaria, James Higgins, Nick Powell, Jason Ainsworth_**
 
+# Screenshots
 ## Home Page
 ![Home page](/public/img/home-screenshot.png)
 
