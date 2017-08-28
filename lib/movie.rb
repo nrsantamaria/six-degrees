@@ -75,17 +75,17 @@ class Movie < ActiveRecord::Base
         else
           new_movie = Movie.create(title: movie[:title])
           if Actor.exists?(name: actor_name2) && Movie.exists?(current_movie)
-            break if Actor.count === 7500
+            break if Actor.count === 3500
             actor = Actor.find_by name: actor_name2
             actor.movies.push(current_movie)
           else
             movie[:actors].each do |actor|
               if Actor.exists?(name: actor)
-                break if Actor.count === 7500
+                break if Actor.count === 3500
                 current_actor = Actor.find_by name: actor
                 new_movie.actors.push(current_actor)
               else
-                break if Actor.count === 7500
+                break if Actor.count === 3500
                 new_movie.actors.push(Actor.create(name: actor))
               end
             end

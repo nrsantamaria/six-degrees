@@ -104,7 +104,7 @@ end
 #   @movie.delete
 #   redirect("/")
 # end
-# 
+#
 # get("/actor_edit/:id") do
 #   @actor = Actor.find_by(id: params.fetch("id").to_i)
 #   erb(:actor_edit)
@@ -126,7 +126,7 @@ end
 # end
 
 get("/load-db") do
-  if Actor.count <= 7500
+  if Actor.count <= 3500
     movies = Movie.Load_movies
     erb :test
   else
