@@ -14,27 +14,27 @@
       <img src="./assets/0.10.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-08-27T18:12:52-07:00">2017-08-27T18:12:52-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-08-27T18:14:14-07:00">2017-08-27T18:14:14-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">63.83%</span></span>
+    (<span class="covered_percent"><span class="red">69.28%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.73
+         0.81
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>3</b> files in total.
-    <b>141</b> relevant lines. 
-    <span class="green"><b>90</b> lines covered</span> and
-    <span class="red"><b>51</b> lines missed </span>
+    <b>153</b> relevant lines. 
+    <span class="green"><b>106</b> lines covered</span> and
+    <span class="red"><b>47</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -52,20 +52,20 @@
       
       <tr>
         <td class="strong"><a href="#49e315ca4d285d78d0a5dfd7b51e17a6eb0d30da" class="src_link" title="app.rb">app.rb</a></td>
-        <td class="red strong">46.88 %</td>
+        <td class="red strong">51.04 %</td>
         <td>139</td>
         <td>96</td>
-        <td>45</td>
-        <td>51</td>
-        <td>0.6</td>
+        <td>49</td>
+        <td>47</td>
+        <td>0.7</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#3d56ebb5010f5f403d41f74c918dc60b7e4debde" class="src_link" title="spec/integration_spec.rb">spec/integration_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>52</td>
-        <td>38</td>
-        <td>38</td>
+        <td>70</td>
+        <td>50</td>
+        <td>50</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -99,11 +99,11 @@
         <div class="source_table" id="49e315ca4d285d78d0a5dfd7b51e17a6eb0d30da">
   <div class="header">
     <h3>app.rb</h3>
-    <h4><span class="red">46.88 %</span> covered</h4>
+    <h4><span class="red">51.04 %</span> covered</h4>
     <div>
       <b>96</b> relevant lines. 
-      <span class="green"><b>45</b> lines covered</span> and
-      <span class="red"><b>51</b> lines missed.</span>
+      <span class="green"><b>49</b> lines covered</span> and
+      <span class="red"><b>47</b> lines missed.</span>
     </div>
   </div>
   
@@ -248,14 +248,14 @@
           <code class="ruby">get(&quot;/actors&quot;) do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
-          
+        <li class="covered" data-hits="2" data-linenumber="24">
+          <span class="hits">2</span>
           
           <code class="ruby">  @actors = Actor.all()</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="25">
-          
+        <li class="covered" data-hits="2" data-linenumber="25">
+          <span class="hits">2</span>
           
           <code class="ruby">  erb(:actors)</code>
         </li>
@@ -608,14 +608,14 @@
           <code class="ruby">get(&quot;/actors/:id&quot;) do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="84">
-          
+        <li class="covered" data-hits="1" data-linenumber="84">
+          <span class="hits">1</span>
           
           <code class="ruby">  @actor = Actor.find(params.fetch(&quot;id&quot;).to_i)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="85">
-          
+        <li class="covered" data-hits="1" data-linenumber="85">
+          <span class="hits">1</span>
           
           <code class="ruby">  erb(:actor)</code>
         </li>
@@ -954,8 +954,8 @@
     <h3>spec/integration_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>38</b> relevant lines. 
-      <span class="green"><b>38</b> lines covered</span> and
+      <b>50</b> relevant lines. 
+      <span class="green"><b>50</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1152,124 +1152,232 @@
         <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
-          <code class="ruby">describe(&#39;six degrees path&#39;, {:type =&gt; :feature}) do</code>
+          <code class="ruby">describe(&#39;the actors page&#39;, {:type =&gt; :feature}) do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">  it(&#39;will show the seperation&#39;) do</code>
+          <code class="ruby">  it(&#39;has a content&#39;) do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
-          <code class="ruby">    actor1 = Actor.create({:name =&gt; &quot;nic cage&quot;})</code>
+          <code class="ruby">    visit(&#39;/actors&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">    actor2 = Actor.create({:name =&gt; &quot;steve buscemi&quot;})</code>
+          <code class="ruby">    expect(page).to have_content(&#39;Current actors included in database&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    movie1 = Movie.create({:title =&gt; &quot;Con Air&quot;, :year =&gt; &quot;1997&quot;, :actor_ids =&gt; [actor1.id, actor2.id]})</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="37">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    visit(&#39;/&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="38">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    fill_in(&#39;Enter A Name For The First Actor:&#39;, :with =&gt; actor1.name )</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="39">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    fill_in(&#39;Enter A Name For The Second Actor:&#39;, :with =&gt; actor2.name )</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="40">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    click_button(&#39;See Degrees&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="41">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(page).to have_content(&#39;Actor Connection&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">end</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe(&#39;the a individual actors page&#39;, {:type =&gt; :feature}) do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it(&#39;has a content&#39;) do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    actor1 = Actor.create({:name =&gt; &quot;nic cage&quot;})</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    actor2 = Actor.create({:name =&gt; &quot;steve buscemi&quot;})</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    movie1 = Movie.create({:title =&gt; &quot;Con Air&quot;, :year =&gt; &quot;1997&quot;, :actor_ids =&gt; [actor1.id, actor2.id]})</code>
+        </li>
+      
         <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
-          <code class="ruby">describe(&#39;six degrees path for errors&#39;, {:type =&gt; :feature}) do</code>
+          <code class="ruby">    visit(&#39;/actors&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">  it(&#39;will show the seperation&#39;) do</code>
+          <code class="ruby">    click_on actor1.name</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
-          <code class="ruby">    visit(&#39;/&#39;)</code>
+          <code class="ruby">    expect(page).to have_content(&#39;Actor Name&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    fill_in(&#39;Enter A Name For The First Actor:&#39;, :with =&gt; &#39; &#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="48">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    fill_in(&#39;Enter A Name For The Second Actor:&#39;, :with =&gt; &#39; &#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="49">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    click_button(&#39;See Degrees&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="50">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(page).to have_content(&#39;Oops&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="50">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe(&#39;six degrees path&#39;, {:type =&gt; :feature}) do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="51">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it(&#39;will show the seperation&#39;) do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="52">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    actor1 = Actor.create({:name =&gt; &quot;nic cage&quot;})</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    actor2 = Actor.create({:name =&gt; &quot;steve buscemi&quot;})</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    movie1 = Movie.create({:title =&gt; &quot;Con Air&quot;, :year =&gt; &quot;1997&quot;, :actor_ids =&gt; [actor1.id, actor2.id]})</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit(&#39;/&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in(&#39;Enter A Name For The First Actor:&#39;, :with =&gt; actor1.name )</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in(&#39;Enter A Name For The Second Actor:&#39;, :with =&gt; actor2.name )</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="58">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_button(&#39;See Degrees&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&#39;Actor Connection&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="62">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe(&#39;six degrees path for errors&#39;, {:type =&gt; :feature}) do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="63">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it(&#39;will show the seperation&#39;) do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit(&#39;/&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="65">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in(&#39;Enter A Name For The First Actor:&#39;, :with =&gt; &#39; &#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="66">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in(&#39;Enter A Name For The Second Actor:&#39;, :with =&gt; &#39; &#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="67">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_button(&#39;See Degrees&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="68">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&#39;Oops&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby">end</code>

@@ -29,6 +29,24 @@ describe('the a individual movies page', {:type => :feature}) do
   end
 end
 
+describe('the actors page', {:type => :feature}) do
+  it('has a content') do
+    visit('/actors')
+    expect(page).to have_content('Current actors included in database')
+  end
+end
+
+describe('the a individual actors page', {:type => :feature}) do
+  it('has a content') do
+    actor1 = Actor.create({:name => "nic cage"})
+    actor2 = Actor.create({:name => "steve buscemi"})
+    movie1 = Movie.create({:title => "Con Air", :year => "1997", :actor_ids => [actor1.id, actor2.id]})
+    visit('/actors')
+    click_on actor1.name
+    expect(page).to have_content('Actor Name')
+  end
+end
+
 describe('six degrees path', {:type => :feature}) do
   it('will show the seperation') do
     actor1 = Actor.create({:name => "nic cage"})
