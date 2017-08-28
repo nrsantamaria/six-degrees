@@ -2,9 +2,7 @@ ENV["RACK_ENV"] = "test"
 
 require("rspec")
 require("pg")
-require("pry")
 require("sinatra/activerecord")
-require("shoulda/matchers")
 require("actor")
 require("movie")
 
