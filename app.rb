@@ -126,7 +126,7 @@ end
 # end
 
 get("/load-db") do
-  if Movie.count <= 250
+  if Actor.count <= 1500
     movies = Movie.Load_movies
     erb :test
   else
