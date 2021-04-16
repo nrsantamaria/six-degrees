@@ -13,4 +13,4 @@ gem('rest-client')
 gem("simplecov", require: false)
 
 
-ruby '2.4.1'
+ruby '2.4.4'
